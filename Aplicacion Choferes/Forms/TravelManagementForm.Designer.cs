@@ -32,7 +32,6 @@
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBoxIDBatch = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,6 +41,9 @@
             this.comboBoxStatusShipp = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.buttonChangeStatus = new System.Windows.Forms.Button();
+            this.txtBoxTruckerID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTravels)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,21 +78,12 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(412, 304);
+            this.buttonDelete.Location = new System.Drawing.Point(333, 304);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(68, 26);
             this.buttonDelete.TabIndex = 54;
             this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(333, 304);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(68, 26);
-            this.buttonAdd.TabIndex = 53;
-            this.buttonAdd.Text = "Agregar";
-            this.buttonAdd.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -162,7 +155,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.Location = new System.Drawing.Point(486, 304);
+            this.buttonSearch.Location = new System.Drawing.Point(412, 304);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(68, 26);
             this.buttonSearch.TabIndex = 61;
@@ -170,12 +163,41 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // buttonChangeStatus
+            // 
+            this.buttonChangeStatus.Location = new System.Drawing.Point(333, 368);
+            this.buttonChangeStatus.Name = "buttonChangeStatus";
+            this.buttonChangeStatus.Size = new System.Drawing.Size(147, 26);
+            this.buttonChangeStatus.TabIndex = 62;
+            this.buttonChangeStatus.Text = "Cambiar estado";
+            this.buttonChangeStatus.UseVisualStyleBackColor = true;
+            this.buttonChangeStatus.Click += new System.EventHandler(this.buttonChangeStatus_Click);
+            // 
+            // txtBoxTruckerID
+            // 
+            this.txtBoxTruckerID.Location = new System.Drawing.Point(489, 309);
+            this.txtBoxTruckerID.Name = "txtBoxTruckerID";
+            this.txtBoxTruckerID.Size = new System.Drawing.Size(49, 20);
+            this.txtBoxTruckerID.TabIndex = 63;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(486, 293);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(52, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "ID Chofer";
+            // 
             // TravelManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(741, 481);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtBoxTruckerID);
+            this.Controls.Add(this.buttonChangeStatus);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.comboBoxStatusShipp);
@@ -184,7 +206,6 @@
             this.Controls.Add(this.buttonBackToMainMenu);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBoxIDBatch);
             this.Controls.Add(this.label2);
@@ -205,7 +226,6 @@
         private System.Windows.Forms.Button buttonBackToMainMenu;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBoxIDBatch;
         private System.Windows.Forms.Label label2;
@@ -215,5 +235,8 @@
         private System.Windows.Forms.ComboBox comboBoxStatusShipp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Button buttonChangeStatus;
+        private System.Windows.Forms.TextBox txtBoxTruckerID;
+        private System.Windows.Forms.Label label5;
     }
 }
