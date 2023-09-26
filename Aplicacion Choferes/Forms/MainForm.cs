@@ -93,6 +93,12 @@ namespace Aplicacion_Choferes.Forms
             showForm(formDestinationCtl);
         }
 
+        private void showTruckerDriveTruckForm()
+        {
+            TruckerDriveTruckManagerForm formTruckerDriveTruckerCtl = new TruckerDriveTruckManagerForm();
+            showForm(formTruckerDriveTruckerCtl);
+        }
+
         private void buttonProductsManager_Click(object sender, EventArgs e)
         {
             showTravelsForm();
@@ -116,6 +122,11 @@ namespace Aplicacion_Choferes.Forms
         private void buttonDestinations_Click(object sender, EventArgs e)
         {
             showDestinationForm();
+        }
+
+        private void buttonAssignedTruckToTrucker_Click(object sender, EventArgs e)
+        {
+            showTruckerDriveTruckForm();
         }
     }
 }

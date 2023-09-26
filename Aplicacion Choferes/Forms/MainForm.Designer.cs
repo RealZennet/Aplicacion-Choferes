@@ -37,13 +37,13 @@
             this.buttonLanguage = new System.Windows.Forms.Button();
             this.leftPanelContainer = new System.Windows.Forms.Panel();
             this.settingsManagerPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTruckersManagementContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelFormsLoader
@@ -81,9 +81,10 @@
             this.buttonAssignedTruckToTrucker.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.buttonAssignedTruckToTrucker.Size = new System.Drawing.Size(240, 26);
             this.buttonAssignedTruckToTrucker.TabIndex = 6;
-            this.buttonAssignedTruckToTrucker.Text = "Camiones asignados";
+            this.buttonAssignedTruckToTrucker.Text = "Camion asignado";
             this.buttonAssignedTruckToTrucker.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAssignedTruckToTrucker.UseVisualStyleBackColor = true;
+            this.buttonAssignedTruckToTrucker.Click += new System.EventHandler(this.buttonAssignedTruckToTrucker_Click);
             // 
             // buttonDestinations
             // 
@@ -166,17 +167,6 @@
             this.settingsManagerPanel.Size = new System.Drawing.Size(250, 43);
             this.settingsManagerPanel.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Aplicacion_Choferes.Properties.Resources.ZENNETLOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panelTruckersManagementContainer
             // 
             this.panelTruckersManagementContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(96)))));
@@ -205,6 +195,17 @@
             this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
             this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Aplicacion_Choferes.Properties.Resources.ZENNETLOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,8 +219,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.leftPanelContainer.ResumeLayout(false);
             this.settingsManagerPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTruckersManagementContainer.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
