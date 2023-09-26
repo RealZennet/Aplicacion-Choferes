@@ -76,7 +76,7 @@ namespace Aplicacion_Choferes
                     string result = apiResponse.resultado;
                     string tipo = apiResponse.tipo;
 
-                    if (result == "OK" && tipo == "operario")
+                    if (result == "OK" && tipo == "camionero")
                     {
                         openPrincipalForm();
                     }

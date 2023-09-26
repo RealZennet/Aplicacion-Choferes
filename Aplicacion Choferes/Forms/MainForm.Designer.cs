@@ -80,7 +80,7 @@
             this.buttonAssignedTruckToTrucker.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.buttonAssignedTruckToTrucker.Size = new System.Drawing.Size(240, 26);
             this.buttonAssignedTruckToTrucker.TabIndex = 6;
-            this.buttonAssignedTruckToTrucker.Text = "CamionesAsignados";
+            this.buttonAssignedTruckToTrucker.Text = "Camiones asignados";
             this.buttonAssignedTruckToTrucker.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAssignedTruckToTrucker.UseVisualStyleBackColor = true;
             // 
