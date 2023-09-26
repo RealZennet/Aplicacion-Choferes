@@ -37,12 +37,13 @@
             this.buttonLanguage = new System.Windows.Forms.Button();
             this.leftPanelContainer = new System.Windows.Forms.Panel();
             this.settingsManagerPanel = new System.Windows.Forms.Panel();
-            this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
+            this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
-            this.panelTruckersManagementContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelTruckersManagementContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelFormsLoader
@@ -75,7 +76,7 @@
             this.buttonAssignedTruckToTrucker.FlatAppearance.BorderSize = 0;
             this.buttonAssignedTruckToTrucker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAssignedTruckToTrucker.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonAssignedTruckToTrucker.Location = new System.Drawing.Point(0, 103);
+            this.buttonAssignedTruckToTrucker.Location = new System.Drawing.Point(0, 135);
             this.buttonAssignedTruckToTrucker.Name = "buttonAssignedTruckToTrucker";
             this.buttonAssignedTruckToTrucker.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.buttonAssignedTruckToTrucker.Size = new System.Drawing.Size(240, 26);
@@ -89,7 +90,7 @@
             this.buttonDestinations.FlatAppearance.BorderSize = 0;
             this.buttonDestinations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDestinations.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonDestinations.Location = new System.Drawing.Point(0, 71);
+            this.buttonDestinations.Location = new System.Drawing.Point(0, 103);
             this.buttonDestinations.Name = "buttonDestinations";
             this.buttonDestinations.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.buttonDestinations.Size = new System.Drawing.Size(240, 26);
@@ -164,18 +165,6 @@
             this.settingsManagerPanel.Size = new System.Drawing.Size(250, 43);
             this.settingsManagerPanel.TabIndex = 1;
             // 
-            // panelTruckersManagementContainer
-            // 
-            this.panelTruckersManagementContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(96)))));
-            this.panelTruckersManagementContainer.Controls.Add(this.buttonAssignedTruckToTrucker);
-            this.panelTruckersManagementContainer.Controls.Add(this.buttonDestinations);
-            this.panelTruckersManagementContainer.Controls.Add(this.buttonProductsManager);
-            this.panelTruckersManagementContainer.Controls.Add(this.buttonShippments);
-            this.panelTruckersManagementContainer.Location = new System.Drawing.Point(0, 131);
-            this.panelTruckersManagementContainer.Name = "panelTruckersManagementContainer";
-            this.panelTruckersManagementContainer.Size = new System.Drawing.Size(250, 135);
-            this.panelTruckersManagementContainer.TabIndex = 0;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -186,6 +175,34 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelTruckersManagementContainer
+            // 
+            this.panelTruckersManagementContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(85)))), ((int)(((byte)(96)))));
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonTruckerCarryManagement);
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonAssignedTruckToTrucker);
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonDestinations);
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonProductsManager);
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonShippments);
+            this.panelTruckersManagementContainer.Location = new System.Drawing.Point(0, 131);
+            this.panelTruckersManagementContainer.Name = "panelTruckersManagementContainer";
+            this.panelTruckersManagementContainer.Size = new System.Drawing.Size(250, 167);
+            this.panelTruckersManagementContainer.TabIndex = 0;
+            // 
+            // buttonTruckerCarryManagement
+            // 
+            this.buttonTruckerCarryManagement.FlatAppearance.BorderSize = 0;
+            this.buttonTruckerCarryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTruckerCarryManagement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonTruckerCarryManagement.Location = new System.Drawing.Point(0, 71);
+            this.buttonTruckerCarryManagement.Name = "buttonTruckerCarryManagement";
+            this.buttonTruckerCarryManagement.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonTruckerCarryManagement.Size = new System.Drawing.Size(240, 26);
+            this.buttonTruckerCarryManagement.TabIndex = 7;
+            this.buttonTruckerCarryManagement.Text = "Lotes asignados a camion";
+            this.buttonTruckerCarryManagement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
+            this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
             // MainForm
             // 
@@ -200,8 +217,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.leftPanelContainer.ResumeLayout(false);
             this.settingsManagerPanel.ResumeLayout(false);
-            this.panelTruckersManagementContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelTruckersManagementContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -219,5 +236,6 @@
         private System.Windows.Forms.Panel leftPanelContainer;
         private System.Windows.Forms.Panel settingsManagerPanel;
         private System.Windows.Forms.Panel panelTruckersManagementContainer;
+        private System.Windows.Forms.Button buttonTruckerCarryManagement;
     }
 }
