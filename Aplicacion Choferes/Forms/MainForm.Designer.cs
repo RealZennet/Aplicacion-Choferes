@@ -98,6 +98,7 @@
             this.buttonDestinations.Text = "Destinos";
             this.buttonDestinations.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonDestinations.UseVisualStyleBackColor = true;
+            this.buttonDestinations.Click += new System.EventHandler(this.buttonDestinations_Click);
             // 
             // buttonProductsManager
             // 
