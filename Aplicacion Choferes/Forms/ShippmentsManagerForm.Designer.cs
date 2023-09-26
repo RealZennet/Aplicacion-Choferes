@@ -53,6 +53,7 @@
             // 
             // dataGridViewShippments
             // 
+            this.dataGridViewShippments.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.dataGridViewShippments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShippments.Location = new System.Drawing.Point(12, 57);
             this.dataGridViewShippments.Name = "dataGridViewShippments";
@@ -109,6 +110,7 @@
             this.buttonSearchByStoreHouseID.TabIndex = 64;
             this.buttonSearchByStoreHouseID.Text = "Buscar por almacen";
             this.buttonSearchByStoreHouseID.UseVisualStyleBackColor = true;
+            this.buttonSearchByStoreHouseID.Click += new System.EventHandler(this.buttonSearchByStoreHouseID_Click);
             // 
             // ShippmentsManagerForm
             // 
