@@ -45,6 +45,7 @@
             this.buttonSearchByDestinationID.TabIndex = 76;
             this.buttonSearchByDestinationID.Text = "Buscar";
             this.buttonSearchByDestinationID.UseVisualStyleBackColor = true;
+            this.buttonSearchByDestinationID.Click += new System.EventHandler(this.buttonSearchByDestinationID_Click);
             // 
             // label1
             // 
@@ -91,6 +92,7 @@
             this.buttonGetAllDestinations.TabIndex = 77;
             this.buttonGetAllDestinations.Text = "Ver destinos";
             this.buttonGetAllDestinations.UseVisualStyleBackColor = true;
+            this.buttonGetAllDestinations.Click += new System.EventHandler(this.buttonGetAllDestinations_Click);
             // 
             // DestinationManagerForm
             // 
