@@ -77,12 +77,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIRequests\ShippmentsInterface.cs" />
     <Compile Include="APIRequests\TravelsInterface.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShippmentsManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShippmentsManagerForm.Designer.cs">
+      <DependentUpon>ShippmentsManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TravelManagementForm.cs">
       <SubType>Form</SubType>
@@ -102,6 +109,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShippmentsManagerForm.resx">
+      <DependentUpon>ShippmentsManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TravelManagementForm.resx">
       <DependentUpon>TravelManagementForm.cs</DependentUpon>

@@ -33,7 +33,7 @@
             this.buttonAssignedTruckToTrucker = new System.Windows.Forms.Button();
             this.buttonDestinations = new System.Windows.Forms.Button();
             this.buttonProductsManager = new System.Windows.Forms.Button();
-            this.buttonTravels = new System.Windows.Forms.Button();
+            this.buttonShippments = new System.Windows.Forms.Button();
             this.buttonLanguage = new System.Windows.Forms.Button();
             this.leftPanelContainer = new System.Windows.Forms.Panel();
             this.settingsManagerPanel = new System.Windows.Forms.Panel();
@@ -113,19 +113,20 @@
             this.buttonProductsManager.UseVisualStyleBackColor = true;
             this.buttonProductsManager.Click += new System.EventHandler(this.buttonProductsManager_Click);
             // 
-            // buttonTravels
+            // buttonShippments
             // 
-            this.buttonTravels.FlatAppearance.BorderSize = 0;
-            this.buttonTravels.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTravels.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonTravels.Location = new System.Drawing.Point(0, 39);
-            this.buttonTravels.Name = "buttonTravels";
-            this.buttonTravels.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonTravels.Size = new System.Drawing.Size(240, 26);
-            this.buttonTravels.TabIndex = 4;
-            this.buttonTravels.Text = "Recorridos";
-            this.buttonTravels.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTravels.UseVisualStyleBackColor = true;
+            this.buttonShippments.FlatAppearance.BorderSize = 0;
+            this.buttonShippments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonShippments.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonShippments.Location = new System.Drawing.Point(0, 39);
+            this.buttonShippments.Name = "buttonShippments";
+            this.buttonShippments.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonShippments.Size = new System.Drawing.Size(240, 26);
+            this.buttonShippments.TabIndex = 4;
+            this.buttonShippments.Text = "Recorridos";
+            this.buttonShippments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonShippments.UseVisualStyleBackColor = true;
+            this.buttonShippments.Click += new System.EventHandler(this.buttonShippments_Click);
             // 
             // buttonLanguage
             // 
@@ -169,7 +170,7 @@
             this.panelTruckersManagementContainer.Controls.Add(this.buttonAssignedTruckToTrucker);
             this.panelTruckersManagementContainer.Controls.Add(this.buttonDestinations);
             this.panelTruckersManagementContainer.Controls.Add(this.buttonProductsManager);
-            this.panelTruckersManagementContainer.Controls.Add(this.buttonTravels);
+            this.panelTruckersManagementContainer.Controls.Add(this.buttonShippments);
             this.panelTruckersManagementContainer.Location = new System.Drawing.Point(0, 131);
             this.panelTruckersManagementContainer.Name = "panelTruckersManagementContainer";
             this.panelTruckersManagementContainer.Size = new System.Drawing.Size(250, 135);
@@ -213,7 +214,7 @@
         private System.Windows.Forms.Button buttonAssignedTruckToTrucker;
         private System.Windows.Forms.Button buttonDestinations;
         private System.Windows.Forms.Button buttonProductsManager;
-        private System.Windows.Forms.Button buttonTravels;
+        private System.Windows.Forms.Button buttonShippments;
         private System.Windows.Forms.Button buttonLanguage;
         private System.Windows.Forms.Panel leftPanelContainer;
         private System.Windows.Forms.Panel settingsManagerPanel;
