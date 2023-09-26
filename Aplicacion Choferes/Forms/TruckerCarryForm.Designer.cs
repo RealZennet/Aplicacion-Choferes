@@ -44,6 +44,7 @@
             this.buttonSearchByTruckerID.TabIndex = 71;
             this.buttonSearchByTruckerID.Text = "Buscar";
             this.buttonSearchByTruckerID.UseVisualStyleBackColor = true;
+            this.buttonSearchByTruckerID.Click += new System.EventHandler(this.buttonSearchByTruckerID_Click);
             // 
             // label1
             // 

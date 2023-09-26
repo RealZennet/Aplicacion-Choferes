@@ -123,6 +123,9 @@
     <EmbeddedResource Include="Forms\TravelManagementForm.resx">
       <DependentUpon>TravelManagementForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TruckerCarryForm.resx">
+      <DependentUpon>TruckerCarryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
