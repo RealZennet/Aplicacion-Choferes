@@ -154,8 +154,6 @@ namespace Aplicacion_Choferes.Forms
                 fillDataTableWithDestinations(table, destinations);
 
                 dataGridViewDestination.DataSource = table;
-
-                MessageBox.Show("Destinos encontrados.");
             }
             else
             {
