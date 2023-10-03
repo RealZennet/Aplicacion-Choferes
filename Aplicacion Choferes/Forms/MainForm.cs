@@ -14,7 +14,6 @@ namespace Aplicacion_Choferes.Forms
     {
         public event Action LanguageChanged;
 
-
         public MainForm()
         {
             InitializeComponent();

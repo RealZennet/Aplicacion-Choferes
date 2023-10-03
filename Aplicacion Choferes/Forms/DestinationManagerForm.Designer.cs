@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonSearchByDestinationID = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIDDestination = new System.Windows.Forms.Label();
             this.txtBoxIDDestination = new System.Windows.Forms.TextBox();
             this.dataGridViewDestination = new System.Windows.Forms.DataGridView();
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
@@ -47,14 +47,14 @@
             this.buttonSearchByDestinationID.UseVisualStyleBackColor = true;
             this.buttonSearchByDestinationID.Click += new System.EventHandler(this.buttonSearchByDestinationID_Click);
             // 
-            // label1
+            // labelIDDestination
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 271);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "ID Destino";
+            this.labelIDDestination.AutoSize = true;
+            this.labelIDDestination.Location = new System.Drawing.Point(12, 271);
+            this.labelIDDestination.Name = "labelIDDestination";
+            this.labelIDDestination.Size = new System.Drawing.Size(57, 13);
+            this.labelIDDestination.TabIndex = 75;
+            this.labelIDDestination.Text = "ID Destino";
             // 
             // txtBoxIDDestination
             // 
@@ -102,7 +102,7 @@
             this.ClientSize = new System.Drawing.Size(693, 364);
             this.Controls.Add(this.buttonGetAllDestinations);
             this.Controls.Add(this.buttonSearchByDestinationID);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelIDDestination);
             this.Controls.Add(this.txtBoxIDDestination);
             this.Controls.Add(this.dataGridViewDestination);
             this.Controls.Add(this.buttonBackToMainMenu);
@@ -118,7 +118,7 @@
         #endregion
 
         private System.Windows.Forms.Button buttonSearchByDestinationID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIDDestination;
         private System.Windows.Forms.TextBox txtBoxIDDestination;
         private System.Windows.Forms.DataGridView dataGridViewDestination;
         private System.Windows.Forms.Button buttonBackToMainMenu;

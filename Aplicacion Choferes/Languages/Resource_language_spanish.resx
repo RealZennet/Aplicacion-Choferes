@@ -306,4 +306,7 @@
   <data name="AssignedTruck" xml:space="preserve">
     <value>Camion asignado</value>
   </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
 </root>

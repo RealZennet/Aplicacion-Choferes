@@ -1,4 +1,5 @@
-﻿using Aplicacion_Choferes.APIRequests;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,14 +16,32 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class DestinationManagerForm : Form
     {
+
+        public event Action LanguageChanged;
+
         public DestinationManagerForm()
         {
             InitializeComponent();
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.LanguageChanged += UpdateLanguage;
+            }
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void UpdateLanguage()
+        {
+            buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
+            buttonSearchByDestinationID.Text = LanguageManager.GetString("Search");
+            buttonGetAllDestinations.Text = LanguageManager.GetString("ViewDestinations");
+
+            labelIDDestination.Text = LanguageManager.GetString("IDDestination");
+
         }
 
         private List<DestinationInterface> deserialize(string content)
@@ -48,7 +67,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener el destino con ID: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
@@ -56,12 +75,12 @@ namespace Aplicacion_Choferes.Forms
         private static void fillDataTable(DataTable table, DestinationInterface destination)
         {
             DataRow row = table.NewRow();
-            row["ID Destino"] = destination.IDDestination;
-            row["Calle"] = destination.StreetDestination;
-            row["Numero"] = destination.DoorNumber;
-            row["Esquina"] = destination.CornerDestination;
-            row["Fecha estimada"] = destination.EstimatedDate;
-            row["Activado"] = destination.ActivedDestination;
+            row["ID"] = destination.IDDestination;
+            row[LanguageManager.GetString("Street")] = destination.StreetDestination;
+            row[LanguageManager.GetString("Number")] = destination.DoorNumber;
+            row[LanguageManager.GetString("Corner")] = destination.CornerDestination;
+            row[LanguageManager.GetString("EstimatedDate")] = destination.EstimatedDate;
+            row[LanguageManager.GetString("Activated")] = destination.ActivedDestination;
             table.Rows.Add(row);
         }
 
@@ -74,28 +93,28 @@ namespace Aplicacion_Choferes.Forms
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     DataTable table = new DataTable();
-                    table.Columns.Add("ID Destino", typeof(int));
-                    table.Columns.Add("Calle", typeof(string));
-                    table.Columns.Add("Numero", typeof(string));
-                    table.Columns.Add("Esquina", typeof(string));
-                    table.Columns.Add("Fecha estimada", typeof(DateTime));
-                    table.Columns.Add("Activado", typeof(bool));
+                    table.Columns.Add("ID", typeof(int));
+                    table.Columns.Add(LanguageManager.GetString("Street"), typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("Number"), typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("Corner"), typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("EstimatedDate"), typeof(DateTime));
+                    table.Columns.Add(LanguageManager.GetString("Activated"), typeof(bool));
 
                     DestinationInterface destination = JsonConvert.DeserializeObject<DestinationInterface>(response.Content);
                     fillDataTable(table, destination);
 
                     dataGridViewDestination.DataSource = table;
 
-                    MessageBox.Show("Destino encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Destino no encontrado.");
+                    MessageBox.Show(Messages.Error + ", " + Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de Destino inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.InvalidID);
             }
         }
 
@@ -114,24 +133,22 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener todos los destinos: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
-
-        
 
         private void fillDataTableWithDestinations(DataTable table, List<DestinationInterface> destinations)
         {
             foreach (var destination in destinations)
             {
                 DataRow row = table.NewRow();
-                row["ID Destino"] = destination.IDDestination;
-                row["Calle"] = destination.StreetDestination;
-                row["Numero"] = destination.DoorNumber;
-                row["Esquina"] = destination.CornerDestination;
-                row["Fecha estimada"] = destination.EstimatedDate;
-                row["Activado"] = destination.ActivedDestination;
+                row["ID"] = destination.IDDestination;
+                row[LanguageManager.GetString("Street")] = destination.StreetDestination;
+                row[LanguageManager.GetString("Number")] = destination.DoorNumber;
+                row[LanguageManager.GetString("Corner")] = destination.CornerDestination;
+                row[LanguageManager.GetString("EstimatedDate")] = destination.EstimatedDate;
+                row[LanguageManager.GetString("Activated")] = destination.ActivedDestination;
                 table.Rows.Add(row);
             }
         }
@@ -143,12 +160,12 @@ namespace Aplicacion_Choferes.Forms
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 DataTable table = new DataTable();
-                table.Columns.Add("ID Destino", typeof(int));
-                table.Columns.Add("Calle", typeof(string));
-                table.Columns.Add("Numero", typeof(string));
-                table.Columns.Add("Esquina", typeof(string));
-                table.Columns.Add("Fecha estimada", typeof(DateTime));
-                table.Columns.Add("Activado", typeof(bool));
+                table.Columns.Add("ID", typeof(int));
+                table.Columns.Add(LanguageManager.GetString("Street"), typeof(string));
+                table.Columns.Add(LanguageManager.GetString("Number"), typeof(string));
+                table.Columns.Add(LanguageManager.GetString("Corner"), typeof(string));
+                table.Columns.Add(LanguageManager.GetString("EstimatedDate"), typeof(DateTime));
+                table.Columns.Add(LanguageManager.GetString("Activated"), typeof(bool));
 
                 List<DestinationInterface> destinations = JsonConvert.DeserializeObject<List<DestinationInterface>>(response.Content);
                 fillDataTableWithDestinations(table, destinations);
@@ -157,7 +174,7 @@ namespace Aplicacion_Choferes.Forms
             }
             else
             {
-                MessageBox.Show("No se encontraron destinos.");
+                MessageBox.Show(Messages.NotFound);
             }
         }
         #endregion getAlldestination

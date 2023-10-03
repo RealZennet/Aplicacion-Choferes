@@ -31,6 +31,12 @@ namespace Aplicacion_Almacen.Languages
         public static string AssignLotToTrucker => LanguageManager.GetString("AssignLotToTrucker");
         public static string ApplicationTrucker => LanguageManager.GetString("ApplicationTrucker");
         public static string AssignedTruck => LanguageManager.GetString("AssignedTruck");
+        public static string Street => LanguageManager.GetString("Street");
+        public static string Corner => LanguageManager.GetString("Corner");
+        public static string Customer => LanguageManager.GetString("Customer");
+        public static string Number => LanguageManager.GetString("Number");
+        public static string EstimatedDate => LanguageManager.GetString("EstimatedDate");
+        public static string NotFound => LanguageManager.GetString("NotFound");
     }
 
 }

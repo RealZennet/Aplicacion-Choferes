@@ -385,6 +385,15 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Not Found.
+        /// </summary>
+        internal static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Number.
         /// </summary>
         internal static string Number {
