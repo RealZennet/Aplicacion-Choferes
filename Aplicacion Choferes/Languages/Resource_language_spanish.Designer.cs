@@ -97,6 +97,24 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Lotes asignados a camionero.
+        /// </summary>
+        internal static string AssignedLotToTrucker {
+            get {
+                return ResourceManager.GetString("AssignedLotToTrucker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Camion asignado.
+        /// </summary>
+        internal static string AssignedTruck {
+            get {
+                return ResourceManager.GetString("AssignedTruck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Asignar lote a camionero.
         /// </summary>
         internal static string AssignLotToTrucker {
@@ -192,6 +210,15 @@ namespace Aplicacion_Choferes.Languages {
         internal static string DestinationID {
             get {
                 return ResourceManager.GetString("DestinationID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Destinos.
+        /// </summary>
+        internal static string Destinations {
+            get {
+                return ResourceManager.GetString("Destinations", resourceCulture);
             }
         }
         
@@ -313,6 +340,15 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Gestionar destinos.
+        /// </summary>
+        internal static string ManageDestinations {
+            get {
+                return ResourceManager.GetString("ManageDestinations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Gestionar lotes.
         /// </summary>
         internal static string ManageLots {
@@ -336,6 +372,15 @@ namespace Aplicacion_Choferes.Languages {
         internal static string ManageShipments {
             get {
                 return ResourceManager.GetString("ManageShipments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Recorridos.
+        /// </summary>
+        internal static string ManageTravels {
+            get {
+                return ResourceManager.GetString("ManageTravels", resourceCulture);
             }
         }
         
@@ -489,6 +534,15 @@ namespace Aplicacion_Choferes.Languages {
         internal static string Street {
             get {
                 return ResourceManager.GetString("Street", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

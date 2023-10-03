@@ -285,4 +285,22 @@
   <data name="ApplicationTrucker" xml:space="preserve">
     <value>Application Trucker</value>
   </data>
+  <data name="ManageDestinations" xml:space="preserve">
+    <value>Manage Destinations</value>
+  </data>
+  <data name="AssignedLotToTrucker" xml:space="preserve">
+    <value>Assigned Lot to trucker</value>
+  </data>
+  <data name="ManageTravels" xml:space="preserve">
+    <value>Manage Travels</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Destinations" xml:space="preserve">
+    <value>Destinations</value>
+  </data>
+  <data name="AssignedTruck" xml:space="preserve">
+    <value>Assigned Truck</value>
+  </data>
 </root>

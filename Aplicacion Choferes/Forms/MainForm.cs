@@ -12,10 +12,15 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class MainForm : Form
     {
+        public event Action LanguageChanged;
+
+
         public MainForm()
         {
             InitializeComponent();
             customMenus();
+            LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            UpdateUI();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -127,6 +132,31 @@ namespace Aplicacion_Choferes.Forms
         private void buttonAssignedTruckToTrucker_Click(object sender, EventArgs e)
         {
             showTruckerDriveTruckForm();
+        }
+
+        private void UpdateUI()
+        {
+            MainForm.ActiveForm.Text = LanguageManager.GetString("ApplicationTrucker");
+            buttonTruckersManagement.Text = LanguageManager.GetString("TrucksAndLots");
+            buttonShippments.Text = LanguageManager.GetString("ManageTravels");
+            buttonProductsManager.Text = LanguageManager.GetString("ManageShipments");
+            buttonTruckerCarryManagement.Text = LanguageManager.GetString("AssignedLotToTrucker");
+            buttonDestinations.Text = LanguageManager.GetString("AssignLotToTrucker");
+            buttonAssignedTruckToTrucker.Text = LanguageManager.GetString("AssignedTruck");
+        }
+
+        private void buttonEnglishLanguage_Click(object sender, EventArgs e)
+        {
+            LanguageManager.Initialize(typeof(Languages.Resource_language_english));
+            UpdateUI();
+            LanguageChanged?.Invoke();
+        }
+
+        private void buttonLanguageSpanish_Click(object sender, EventArgs e)
+        {
+            LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            UpdateUI();
+            LanguageChanged?.Invoke();
         }
     }
 }

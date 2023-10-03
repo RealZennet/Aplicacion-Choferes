@@ -24,6 +24,13 @@ namespace Aplicacion_Almacen.Languages
         public static string TruckID => LanguageManager.GetString("TruckID");
         public static string TruckerID => LanguageManager.GetString("TruckerID");
         public static string DestinationID => LanguageManager.GetString("DestinationID");
+        public static string AssignedLotToTrucker => LanguageManager.GetString("AssignedLotToTrucker");
+        public static string ManageShipments => LanguageManager.GetString("ManageShipments");
+        public static string ManageTravels => LanguageManager.GetString("ManageTravels");
+        public static string TrucksAndLots => LanguageManager.GetString("TrucksAndLots");
+        public static string AssignLotToTrucker => LanguageManager.GetString("AssignLotToTrucker");
+        public static string ApplicationTrucker => LanguageManager.GetString("ApplicationTrucker");
+        public static string AssignedTruck => LanguageManager.GetString("AssignedTruck");
     }
 
 }

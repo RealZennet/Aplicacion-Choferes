@@ -118,6 +118,18 @@
     <Compile Include="Forms\TruckerDriveTruckManagerForm.Designer.cs">
       <DependentUpon>TruckerDriveTruckManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Languages\LanguageManager.cs" />
+    <Compile Include="Languages\Messages.cs" />
+    <Compile Include="Languages\Resource_language_english.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_language_english.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Languages\Resource_language_spanish.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource_language_spanish.resx</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +157,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TruckerDriveTruckManagerForm.resx">
       <DependentUpon>TruckerDriveTruckManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Resource_language_english.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_language_english.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Resource_language_spanish.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource_language_spanish.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
