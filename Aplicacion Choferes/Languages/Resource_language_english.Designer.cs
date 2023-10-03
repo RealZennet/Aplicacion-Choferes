@@ -520,11 +520,29 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Shipment Date.
+        /// </summary>
+        internal static string ShipmentDate {
+            get {
+                return ResourceManager.GetString("ShipmentDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Status.
         /// </summary>
         internal static string Status {
             get {
                 return ResourceManager.GetString("Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a StoreHouse.
+        /// </summary>
+        internal static string StoreHouse {
+            get {
+                return ResourceManager.GetString("StoreHouse", resourceCulture);
             }
         }
         
@@ -579,6 +597,15 @@ namespace Aplicacion_Choferes.Languages {
         internal static string TrucksAndLots {
             get {
                 return ResourceManager.GetString("TrucksAndLots", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Type Travel.
+        /// </summary>
+        internal static string TypeTravel {
+            get {
+                return ResourceManager.GetString("TypeTravel", resourceCulture);
             }
         }
         

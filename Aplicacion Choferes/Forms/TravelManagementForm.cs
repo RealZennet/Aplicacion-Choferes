@@ -1,4 +1,5 @@
-﻿using Aplicacion_Choferes.APIRequests;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,6 +16,8 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class TravelManagementForm : Form
     {
+        public event Action LanguageChanged;
+
         public TravelManagementForm()
         {
             InitializeComponent();
@@ -22,6 +25,27 @@ namespace Aplicacion_Choferes.Forms
             comboBoxStatusShipp.Items.Add("EnCamino");
             comboBoxStatusShipp.Items.Add("Retrasado");
             comboBoxStatusShipp.Items.Add("NoEnviado");
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.LanguageChanged += UpdateLanguage;
+            }
+        }
+
+        private void UpdateLanguage()
+        {
+            buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
+            buttonChangeStatus.Text = LanguageManager.GetString("ChangeStatus");
+            buttonRefresh.Text = LanguageManager.GetString("Refresh");
+            buttonSearch.Text = LanguageManager.GetString("Search");
+            buttonDelete.Text = LanguageManager.GetString("Delete");
+
+            labelIDTruck.Text = LanguageManager.GetString("IDTruck");
+            labelIDLotToAssign.Text = LanguageManager.GetString("LotIDToAssign");
+            labelIDDestination.Text = LanguageManager.GetString("IDDestination");
+            labelIDTrucker.Text = LanguageManager.GetString("IDTrucker");
+            labelStatus.Text = LanguageManager.GetString("Status");
+
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
@@ -52,7 +76,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener el camión con ID: " + ex.Message);
+                MessageBox.Show(Messages.InvalidID + " : " + ex.Message);
                 return null;
             }
         }
@@ -61,9 +85,9 @@ namespace Aplicacion_Choferes.Forms
         {
             DataRow row = table.NewRow();
             row["ID Camión"] = travels.IDTruck;
-            row["ID Lote"] = travels.IDBatch;
-            row["ID Destino"] = travels.IDDestination;
-            row["Estado del pedido"] = travels.ShippingStatus;
+            row[LanguageManager.GetString("LotID")] = travels.IDBatch;
+            row[LanguageManager.GetString("IDDestination")] = travels.IDDestination;
+            row[LanguageManager.GetString("Status")] = travels.ShippingStatus;
             table.Rows.Add(row);
         }
 
@@ -77,25 +101,25 @@ namespace Aplicacion_Choferes.Forms
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camión", typeof(int));
-                    table.Columns.Add("ID Lote", typeof(int));
-                    table.Columns.Add("ID Destino", typeof(int));
-                    table.Columns.Add("Estado del pedido", typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("LotID"), typeof(int));
+                    table.Columns.Add(LanguageManager.GetString("IDDestination"), typeof(int));
+                    table.Columns.Add(LanguageManager.GetString("Status"), typeof(string));
 
                     TravelsInterface travel = JsonConvert.DeserializeObject<TravelsInterface>(response.Content);
                     fillDataTable(table, travel);
 
                     dataGridViewTravels.DataSource = table;
 
-                    MessageBox.Show("Camión con datos encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Camión no encontrado.");
+                    MessageBox.Show(Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de camión inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.Error + " " + Messages.InvalidID);
             }
         }
 
@@ -113,7 +137,6 @@ namespace Aplicacion_Choferes.Forms
                     newShippingStatus = status
                 };
 
-                // Serializar el objeto en formato JSON
                 var jsonBody = JsonConvert.SerializeObject(requestBody);
                 request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
 
@@ -125,13 +148,13 @@ namespace Aplicacion_Choferes.Forms
                 }
                 else
                 {
-                    MessageBox.Show("La solicitud al servidor no se completó correctamente. Código de estado: " + response.StatusCode);
+                    MessageBox.Show(Messages.Error + " : " + response.StatusCode);
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al editar el registro: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return false;
             }
         }
@@ -167,7 +190,7 @@ namespace Aplicacion_Choferes.Forms
         {
             if (!validateInputsUser())
             {
-                MessageBox.Show("Por favor, completa todos los campos");
+                MessageBox.Show(Messages.CompleteAllBoxAndStatus);
                 return;
             }
 
@@ -178,17 +201,17 @@ namespace Aplicacion_Choferes.Forms
             {
                 if (editTravel(comboBoxStatusShipp.SelectedItem.ToString(), truckerID))
                 {
-                    MessageBox.Show("Registro de viaje editado exitosamente." + comboBoxStatusShipp.SelectedItem.ToString());
+                    MessageBox.Show(Messages.Successful + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
                     clearTxtBoxs();
                 }
                 else
                 {
-                    MessageBox.Show("Error al editar el registro. Por favor, verifica los datos ingresados." + comboBoxStatusShipp.SelectedItem.ToString());
+                    MessageBox.Show(Messages.Error + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
                 }
             }
             else
             {
-                MessageBox.Show("Los campos ID Camión, ID Lote, ID Destino y ID Camionero deben ser números válidos.");
+                MessageBox.Show(Messages.InvalidID+"'s");
             }
         }
 

@@ -31,8 +31,8 @@
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
             this.dataGridViewShippments = new System.Windows.Forms.DataGridView();
             this.txtBoxIDDestination = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelIDDestination = new System.Windows.Forms.Label();
+            this.labelStoreHouse = new System.Windows.Forms.Label();
             this.txtBoxStoreHouseID = new System.Windows.Forms.TextBox();
             this.buttonSearchByDestinationID = new System.Windows.Forms.Button();
             this.buttonSearchByStoreHouseID = new System.Windows.Forms.Button();
@@ -67,23 +67,23 @@
             this.txtBoxIDDestination.Size = new System.Drawing.Size(113, 20);
             this.txtBoxIDDestination.TabIndex = 59;
             // 
-            // label1
+            // labelIDDestination
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 276);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "ID Destino";
+            this.labelIDDestination.AutoSize = true;
+            this.labelIDDestination.Location = new System.Drawing.Point(12, 276);
+            this.labelIDDestination.Name = "labelIDDestination";
+            this.labelIDDestination.Size = new System.Drawing.Size(57, 13);
+            this.labelIDDestination.TabIndex = 60;
+            this.labelIDDestination.Text = "ID Destino";
             // 
-            // label2
+            // labelStoreHouse
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(196, 276);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 62;
-            this.label2.Text = "ID Almacen";
+            this.labelStoreHouse.AutoSize = true;
+            this.labelStoreHouse.Location = new System.Drawing.Point(196, 276);
+            this.labelStoreHouse.Name = "labelStoreHouse";
+            this.labelStoreHouse.Size = new System.Drawing.Size(62, 13);
+            this.labelStoreHouse.TabIndex = 62;
+            this.labelStoreHouse.Text = "ID Almacen";
             // 
             // txtBoxStoreHouseID
             // 
@@ -120,9 +120,9 @@
             this.ClientSize = new System.Drawing.Size(725, 442);
             this.Controls.Add(this.buttonSearchByStoreHouseID);
             this.Controls.Add(this.buttonSearchByDestinationID);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelStoreHouse);
             this.Controls.Add(this.txtBoxStoreHouseID);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelIDDestination);
             this.Controls.Add(this.txtBoxIDDestination);
             this.Controls.Add(this.dataGridViewShippments);
             this.Controls.Add(this.buttonBackToMainMenu);
@@ -140,8 +140,8 @@
         private System.Windows.Forms.Button buttonBackToMainMenu;
         private System.Windows.Forms.DataGridView dataGridViewShippments;
         private System.Windows.Forms.TextBox txtBoxIDDestination;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelIDDestination;
+        private System.Windows.Forms.Label labelStoreHouse;
         private System.Windows.Forms.TextBox txtBoxStoreHouseID;
         private System.Windows.Forms.Button buttonSearchByDestinationID;
         private System.Windows.Forms.Button buttonSearchByStoreHouseID;

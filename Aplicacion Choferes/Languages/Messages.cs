@@ -37,6 +37,15 @@ namespace Aplicacion_Almacen.Languages
         public static string Number => LanguageManager.GetString("Number");
         public static string EstimatedDate => LanguageManager.GetString("EstimatedDate");
         public static string NotFound => LanguageManager.GetString("NotFound");
+        public static string SearchByDestinationID => LanguageManager.GetString("SearchByDestinationID");
+        public static string SearchByStoreHouseID => LanguageManager.GetString("SearchByStoreHouseID");
+        public static string StoreHouse => LanguageManager.GetString("StoreHouse");
+        public static string TypeTravel => LanguageManager.GetString("TypeTravel");
+        public static string ShipmentDate => LanguageManager.GetString("ShipmentDate");
+        public static string ChangeStatus => LanguageManager.GetString("ChangeStatus");
+        public static string LotIDToAssign => LanguageManager.GetString("LotIDToAssign");
+        public static string Status => LanguageManager.GetString("Status");
+        public static string LotID => LanguageManager.GetString("LotID");
     }
 
 }

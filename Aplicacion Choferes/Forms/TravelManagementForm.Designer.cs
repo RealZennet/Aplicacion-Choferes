@@ -32,18 +32,18 @@
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelIDLotToAssign = new System.Windows.Forms.Label();
             this.txtBoxIDBatch = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelIDTruck = new System.Windows.Forms.Label();
             this.txtBoxIDTruck = new System.Windows.Forms.TextBox();
             this.dataGridViewTravels = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIDDestination = new System.Windows.Forms.Label();
             this.comboBoxStatusShipp = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonChangeStatus = new System.Windows.Forms.Button();
             this.txtBoxTruckerID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelIDTrucker = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTravels)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,14 +85,14 @@
             this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // labelIDLotToAssign
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 133);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 13);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "ID del lote a asignar";
+            this.labelIDLotToAssign.AutoSize = true;
+            this.labelIDLotToAssign.Location = new System.Drawing.Point(330, 133);
+            this.labelIDLotToAssign.Name = "labelIDLotToAssign";
+            this.labelIDLotToAssign.Size = new System.Drawing.Size(101, 13);
+            this.labelIDLotToAssign.TabIndex = 52;
+            this.labelIDLotToAssign.Text = "ID del lote a asignar";
             // 
             // txtBoxIDBatch
             // 
@@ -101,14 +101,14 @@
             this.txtBoxIDBatch.Size = new System.Drawing.Size(61, 20);
             this.txtBoxIDBatch.TabIndex = 51;
             // 
-            // label2
+            // labelIDTruck
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "ID Camion";
+            this.labelIDTruck.AutoSize = true;
+            this.labelIDTruck.Location = new System.Drawing.Point(330, 61);
+            this.labelIDTruck.Name = "labelIDTruck";
+            this.labelIDTruck.Size = new System.Drawing.Size(56, 13);
+            this.labelIDTruck.TabIndex = 50;
+            this.labelIDTruck.Text = "ID Camion";
             // 
             // txtBoxIDTruck
             // 
@@ -127,14 +127,14 @@
             this.dataGridViewTravels.Size = new System.Drawing.Size(312, 410);
             this.dataGridViewTravels.TabIndex = 48;
             // 
-            // label1
+            // labelIDDestination
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
-            this.label1.TabIndex = 58;
-            this.label1.Text = "ID Destino";
+            this.labelIDDestination.AutoSize = true;
+            this.labelIDDestination.Location = new System.Drawing.Point(330, 189);
+            this.labelIDDestination.Name = "labelIDDestination";
+            this.labelIDDestination.Size = new System.Drawing.Size(57, 13);
+            this.labelIDDestination.TabIndex = 58;
+            this.labelIDDestination.Text = "ID Destino";
             // 
             // comboBoxStatusShipp
             // 
@@ -144,14 +144,14 @@
             this.comboBoxStatusShipp.Size = new System.Drawing.Size(98, 21);
             this.comboBoxStatusShipp.TabIndex = 59;
             // 
-            // label4
+            // labelStatus
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 248);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 13);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "Estado del envio";
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Location = new System.Drawing.Point(330, 248);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(86, 13);
+            this.labelStatus.TabIndex = 60;
+            this.labelStatus.Text = "Estado del envio";
             // 
             // buttonSearch
             // 
@@ -180,14 +180,14 @@
             this.txtBoxTruckerID.Size = new System.Drawing.Size(49, 20);
             this.txtBoxTruckerID.TabIndex = 63;
             // 
-            // label5
+            // labelIDTrucker
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(486, 293);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 13);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "ID Chofer";
+            this.labelIDTrucker.AutoSize = true;
+            this.labelIDTrucker.Location = new System.Drawing.Point(486, 293);
+            this.labelIDTrucker.Name = "labelIDTrucker";
+            this.labelIDTrucker.Size = new System.Drawing.Size(52, 13);
+            this.labelIDTrucker.TabIndex = 64;
+            this.labelIDTrucker.Text = "ID Chofer";
             // 
             // TravelManagementForm
             // 
@@ -195,20 +195,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(741, 481);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.labelIDTrucker);
             this.Controls.Add(this.txtBoxTruckerID);
             this.Controls.Add(this.buttonChangeStatus);
             this.Controls.Add(this.buttonSearch);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.comboBoxStatusShipp);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelIDDestination);
             this.Controls.Add(this.txtBoxDestination);
             this.Controls.Add(this.buttonBackToMainMenu);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelIDLotToAssign);
             this.Controls.Add(this.txtBoxIDBatch);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelIDTruck);
             this.Controls.Add(this.txtBoxIDTruck);
             this.Controls.Add(this.dataGridViewTravels);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -226,17 +226,17 @@
         private System.Windows.Forms.Button buttonBackToMainMenu;
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelIDLotToAssign;
         private System.Windows.Forms.TextBox txtBoxIDBatch;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelIDTruck;
         private System.Windows.Forms.TextBox txtBoxIDTruck;
         private System.Windows.Forms.DataGridView dataGridViewTravels;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIDDestination;
         private System.Windows.Forms.ComboBox comboBoxStatusShipp;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonChangeStatus;
         private System.Windows.Forms.TextBox txtBoxTruckerID;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelIDTrucker;
     }
 }

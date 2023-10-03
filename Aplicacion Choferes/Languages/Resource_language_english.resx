@@ -306,4 +306,13 @@
   <data name="NotFound" xml:space="preserve">
     <value>Not Found</value>
   </data>
+  <data name="StoreHouse" xml:space="preserve">
+    <value>StoreHouse</value>
+  </data>
+  <data name="ShipmentDate" xml:space="preserve">
+    <value>Shipment Date</value>
+  </data>
+  <data name="TypeTravel" xml:space="preserve">
+    <value>Type Travel</value>
+  </data>
 </root>

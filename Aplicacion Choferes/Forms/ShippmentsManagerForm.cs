@@ -1,4 +1,5 @@
-﻿using Aplicacion_Choferes.APIRequests;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,9 +16,28 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class ShippmentsManagerForm : Form
     {
+
+        public event Action LanguageChanged;
+
         public ShippmentsManagerForm()
         {
             InitializeComponent();
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.LanguageChanged += UpdateLanguage;
+            }
+        }
+
+        private void UpdateLanguage()
+        {
+            buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
+            buttonSearchByDestinationID.Text = LanguageManager.GetString("SearchByDestinationID");
+            buttonSearchByStoreHouseID.Text = LanguageManager.GetString("SearchByStoreHouseID");
+
+            labelIDDestination.Text = LanguageManager.GetString("IDDestination");
+            labelStoreHouse.Text = LanguageManager.GetString("StoreHouse");
+
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
@@ -48,7 +68,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener el recorrido con ID: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
@@ -58,8 +78,8 @@ namespace Aplicacion_Choferes.Forms
             DataRow row = table.NewRow();
             row["ID Destino"] = shipp.IDDestination;
             row["ID Almacen"] = shipp.IDStoreHouse;
-            row["Tipo recorrido"] = shipp.TypeTravel;
-            row["Fecha recorrido"] = shipp.ShippmentDate;
+            row[LanguageManager.GetString("TypeTravel")] = shipp.TypeTravel;
+            row[LanguageManager.GetString("ShipmentDate")] = shipp.ShippmentDate;
             table.Rows.Add(row);
         }
 
@@ -74,24 +94,24 @@ namespace Aplicacion_Choferes.Forms
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Destino", typeof(int));
                     table.Columns.Add("ID Almacen", typeof(int));
-                    table.Columns.Add("Tipo recorrido", typeof(string));
-                    table.Columns.Add("Fecha recorrido", typeof(DateTime));
+                    table.Columns.Add(LanguageManager.GetString("TypeTravel"), typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
                     ShippmentsInterface shipp = JsonConvert.DeserializeObject<ShippmentsInterface>(response.Content);
                     fillDataTable(table, shipp);
 
                     dataGridViewShippments.DataSource = table;
 
-                    MessageBox.Show("Recorrido encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Recorrido no encontrado.");
+                    MessageBox.Show(Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de recorrido inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.InvalidID);
             }
         }
 
@@ -120,7 +140,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener el recorrido con ID: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
@@ -130,8 +150,8 @@ namespace Aplicacion_Choferes.Forms
             DataRow row = table.NewRow();
             row["ID Destino"] = shipp.IDDestination;
             row["ID Almacen"] = shipp.IDStoreHouse;
-            row["Tipo recorrido"] = shipp.TypeTravel;
-            row["Fecha recorrido"] = shipp.ShippmentDate;
+            row[LanguageManager.GetString("TypeTravel")] = shipp.TypeTravel;
+            row[LanguageManager.GetString("ShipmentDate")] = shipp.ShippmentDate;
             table.Rows.Add(row);
         }
 
@@ -146,24 +166,24 @@ namespace Aplicacion_Choferes.Forms
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Destino", typeof(int));
                     table.Columns.Add("ID Almacen", typeof(int));
-                    table.Columns.Add("Tipo recorrido", typeof(string));
-                    table.Columns.Add("Fecha recorrido", typeof(DateTime));
+                    table.Columns.Add(LanguageManager.GetString("TypeTravel"), typeof(string));
+                    table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
                     ShippmentsInterface shipp = JsonConvert.DeserializeObject<ShippmentsInterface>(response.Content);
                     fillDataTable(table, shipp);
 
                     dataGridViewShippments.DataSource = table;
 
-                    MessageBox.Show("Recorrido encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Recorrido no encontrado.");
+                    MessageBox.Show(Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de recorrido inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.Error + ", " + Messages.InvalidID);
             }
         }
         #endregion findByStoreHouse
