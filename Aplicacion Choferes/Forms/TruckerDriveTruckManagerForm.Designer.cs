@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonSearchByTruckByTruckerID = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelIDTrucker = new System.Windows.Forms.Label();
             this.txtBoxIDTrucker = new System.Windows.Forms.TextBox();
             this.dataGridViewTruckerAndTruckers = new System.Windows.Forms.DataGridView();
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
@@ -46,14 +46,14 @@
             this.buttonSearchByTruckByTruckerID.UseVisualStyleBackColor = true;
             this.buttonSearchByTruckByTruckerID.Click += new System.EventHandler(this.buttonSearchByTruckByTruckerID_Click);
             // 
-            // label1
+            // labelIDTrucker
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 282);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "ID Camionero";
+            this.labelIDTrucker.AutoSize = true;
+            this.labelIDTrucker.Location = new System.Drawing.Point(9, 282);
+            this.labelIDTrucker.Name = "labelIDTrucker";
+            this.labelIDTrucker.Size = new System.Drawing.Size(71, 13);
+            this.labelIDTrucker.TabIndex = 81;
+            this.labelIDTrucker.Text = "ID Camionero";
             // 
             // txtBoxIDTrucker
             // 
@@ -90,7 +90,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(696, 385);
             this.Controls.Add(this.buttonSearchByTruckByTruckerID);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelIDTrucker);
             this.Controls.Add(this.txtBoxIDTrucker);
             this.Controls.Add(this.dataGridViewTruckerAndTruckers);
             this.Controls.Add(this.buttonBackToMainMenu);
@@ -105,7 +105,7 @@
 
         #endregion
         private System.Windows.Forms.Button buttonSearchByTruckByTruckerID;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelIDTrucker;
         private System.Windows.Forms.TextBox txtBoxIDTrucker;
         private System.Windows.Forms.DataGridView dataGridViewTruckerAndTruckers;
         private System.Windows.Forms.Button buttonBackToMainMenu;

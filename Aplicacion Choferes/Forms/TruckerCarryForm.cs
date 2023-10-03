@@ -1,4 +1,5 @@
-﻿using Aplicacion_Choferes.APIRequests;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,14 +16,30 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class TruckerCarryForm : Form
     {
+        public event Action LanguageChanged;
+
         public TruckerCarryForm()
         {
             InitializeComponent();
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.LanguageChanged += UpdateLanguage;
+            }
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void UpdateLanguage()
+        {
+            buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
+            buttonSearchByTruckerID.Text = LanguageManager.GetString("TruckerID");
+
+            labelIDTrucker.Text = LanguageManager.GetString("TruckerID");
+
         }
 
         private List<TruckerCarryInterface> deserialize(string content)
@@ -48,7 +65,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener el cargamento con ID: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
@@ -57,8 +74,8 @@ namespace Aplicacion_Choferes.Forms
         {
             DataRow row = table.NewRow();
             row["ID Camion"] = carry.IDTruck;
-            row["ID Lote"] = carry.IDBatch;
-            row["Fecha Salida"] = carry.ShippmentDate;
+            row[LanguageManager.GetString("LotID")] = carry.IDBatch;
+            row[LanguageManager.GetString("ShipmentDate")] = carry.ShippmentDate;
             table.Rows.Add(row);
         }
 
@@ -72,24 +89,24 @@ namespace Aplicacion_Choferes.Forms
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camion", typeof(int));
-                    table.Columns.Add("ID Lote", typeof(int));
-                    table.Columns.Add("Fecha Salida", typeof(DateTime));
+                    table.Columns.Add(LanguageManager.GetString("LotID"), typeof(int));
+                    table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
                     TruckerCarryInterface carrie = JsonConvert.DeserializeObject<TruckerCarryInterface>(response.Content);
                     fillDataTable(table, carrie);
 
                     dataGridViewShippments.DataSource = table;
 
-                    MessageBox.Show("Recorrido encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Recorrido no encontrado.");
+                    MessageBox.Show(Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de recorrido inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.Error + ", " + Messages.InvalidID);
             }
         }
     }

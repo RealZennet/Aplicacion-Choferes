@@ -1,4 +1,5 @@
-﻿using Aplicacion_Choferes.APIRequests;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -15,9 +16,25 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class TruckerDriveTruckManagerForm : Form
     {
+        public event Action LanguageChanged;
+
         public TruckerDriveTruckManagerForm()
         {
             InitializeComponent();
+            MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (mainForm != null)
+            {
+                mainForm.LanguageChanged += UpdateLanguage;
+            }
+        }
+
+        private void UpdateLanguage()
+        {
+            buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
+            buttonSearchByTruckByTruckerID.Text = LanguageManager.GetString("IDTrucker");
+
+            labelIDTrucker.Text = LanguageManager.GetString("IDTrucker");
+
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
@@ -48,7 +65,7 @@ namespace Aplicacion_Choferes.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener datos de el camionero con ID: " + ex.Message);
+                MessageBox.Show(Messages.Error + " : " + ex.Message);
                 return null;
             }
         }
@@ -57,7 +74,7 @@ namespace Aplicacion_Choferes.Forms
         {
             DataRow row = table.NewRow();
             row["ID Camionero"] = trucker.IDTrucker;
-            row["ID Camion"] = trucker.IDTruck;
+            row[LanguageManager.GetString("IDTruck")] = trucker.IDTruck;
             table.Rows.Add(row);
         }
 
@@ -71,23 +88,23 @@ namespace Aplicacion_Choferes.Forms
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camionero", typeof(int));
-                    table.Columns.Add("ID Camion", typeof(int));
+                    table.Columns.Add(LanguageManager.GetString("IDTruck"), typeof(int));
 
                     TruckerDriveTruckInterface trucker = JsonConvert.DeserializeObject<TruckerDriveTruckInterface>(response.Content);
                     fillDataTable(table, trucker);
 
                     dataGridViewTruckerAndTruckers.DataSource = table;
 
-                    MessageBox.Show("Camionero encontrado.");
+                    MessageBox.Show(Messages.Successful);
                 }
                 else
                 {
-                    MessageBox.Show("Camionero no encontrado.");
+                    MessageBox.Show(Messages.NotFound);
                 }
             }
             else
             {
-                MessageBox.Show("ID de camionero inválido. Ingresa un número válido.");
+                MessageBox.Show(Messages.InvalidID);
             }
         }
     }
