@@ -285,4 +285,7 @@
   <data name="Weight" xml:space="preserve">
     <value>Peso</value>
   </data>
+  <data name="ApplicationTrucker" xml:space="preserve">
+    <value>Aplicacion Camionero</value>
+  </data>
 </root>

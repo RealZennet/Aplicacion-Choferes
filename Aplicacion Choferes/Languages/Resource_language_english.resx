@@ -178,7 +178,7 @@
     <value>ID Destination</value>
   </data>
   <data name="IDTruck" xml:space="preserve">
-    <value>ID Trucker</value>
+    <value>ID Truck</value>
   </data>
   <data name="InvalidID" xml:space="preserve">
     <value>Invalid ID</value>
@@ -281,5 +281,8 @@
   </data>
   <data name="Weight" xml:space="preserve">
     <value>Weight</value>
+  </data>
+  <data name="ApplicationTrucker" xml:space="preserve">
+    <value>Application Trucker</value>
   </data>
 </root>

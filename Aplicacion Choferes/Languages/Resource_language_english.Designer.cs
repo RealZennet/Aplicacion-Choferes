@@ -79,6 +79,15 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Application Trucker.
+        /// </summary>
+        internal static string ApplicationTrucker {
+            get {
+                return ResourceManager.GetString("ApplicationTrucker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a StoreHouse Application.
         /// </summary>
         internal static string AppStoreHouseTitle {
@@ -241,7 +250,7 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ID Trucker.
+        ///   Busca una cadena traducida similar a ID Truck.
         /// </summary>
         internal static string IDTruck {
             get {

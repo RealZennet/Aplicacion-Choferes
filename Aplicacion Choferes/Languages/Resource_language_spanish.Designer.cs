@@ -79,6 +79,15 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Aplicacion Camionero.
+        /// </summary>
+        internal static string ApplicationTrucker {
+            get {
+                return ResourceManager.GetString("ApplicationTrucker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Aplicacion Almacen.
         /// </summary>
         internal static string AppStoreHouseTitle {
