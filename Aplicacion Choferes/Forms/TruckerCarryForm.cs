@@ -1,4 +1,5 @@
 ﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.ApiRequests;
 using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
@@ -17,6 +18,8 @@ namespace Aplicacion_Choferes.Forms
     public partial class TruckerCarryForm : Form
     {
         public event Action LanguageChanged;
+        private ApiRequestTruckerCarry truckCarryApiRequest = new ApiRequestTruckerCarry("http://localhost:50294");
+
 
         public TruckerCarryForm()
         {
@@ -83,16 +86,15 @@ namespace Aplicacion_Choferes.Forms
         {
             if (int.TryParse(txtBoxIDTrucker.Text, out int searchID))
             {
-                RestResponse response = getCarrieByID(searchID);
+                TruckerCarryInterface carrie = truckCarryApiRequest.GetTruckCarryByID(searchID);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (carrie != null)
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camion", typeof(int));
                     table.Columns.Add(LanguageManager.GetString("LotID"), typeof(int));
                     table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
-                    TruckerCarryInterface carrie = JsonConvert.DeserializeObject<TruckerCarryInterface>(response.Content);
                     fillDataTable(table, carrie);
 
                     dataGridViewShippments.DataSource = table;
@@ -109,5 +111,6 @@ namespace Aplicacion_Choferes.Forms
                 MessageBox.Show(Messages.Error + ", " + Messages.InvalidID);
             }
         }
+
     }
 }
