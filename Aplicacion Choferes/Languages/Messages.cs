@@ -46,6 +46,7 @@ namespace Aplicacion_Almacen.Languages
         public static string LotIDToAssign => LanguageManager.GetString("LotIDToAssign");
         public static string Status => LanguageManager.GetString("Status");
         public static string LotID => LanguageManager.GetString("LotID");
+        public static string Destinations => LanguageManager.GetString("Destinations");
     }
 
 }

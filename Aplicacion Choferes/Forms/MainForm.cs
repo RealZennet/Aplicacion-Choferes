@@ -140,7 +140,7 @@ namespace Aplicacion_Choferes.Forms
             buttonShippments.Text = LanguageManager.GetString("ManageTravels");
             buttonProductsManager.Text = LanguageManager.GetString("ManageShipments");
             buttonTruckerCarryManagement.Text = LanguageManager.GetString("AssignedLotToTrucker");
-            buttonDestinations.Text = LanguageManager.GetString("AssignLotToTrucker");
+            buttonDestinations.Text = LanguageManager.GetString("Destinations");
             buttonAssignedTruckToTrucker.Text = LanguageManager.GetString("AssignedTruck");
         }
 

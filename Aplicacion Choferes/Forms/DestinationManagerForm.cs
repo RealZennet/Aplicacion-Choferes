@@ -1,4 +1,5 @@
 ﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.ApiRequests;
 using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
@@ -16,8 +17,9 @@ namespace Aplicacion_Choferes.Forms
 {
     public partial class DestinationManagerForm : Form
     {
-
         public event Action LanguageChanged;
+        private ApiRequestDestinations destinationApiRequest = new ApiRequestDestinations("http://localhost:50294");
+
 
         public DestinationManagerForm()
         {
@@ -54,24 +56,6 @@ namespace Aplicacion_Choferes.Forms
             return JsonConvert.DeserializeObject<List<DestinationInterface>>(content);
         }
 
-        private static RestResponse getDestinationByID(int destinationID)
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/camion/destinos/{destinationID}", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return null;
-            }
-        }
-
         private static void fillDataTable(DataTable table, DestinationInterface destination)
         {
             DataRow row = table.NewRow();
@@ -88,9 +72,9 @@ namespace Aplicacion_Choferes.Forms
         {
             if (int.TryParse(txtBoxIDDestination.Text, out int searchID))
             {
-                RestResponse response = getDestinationByID(searchID);
+                DestinationInterface destination = destinationApiRequest.GetDestinationByID(searchID);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (destination != null)
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID", typeof(int));
@@ -100,7 +84,6 @@ namespace Aplicacion_Choferes.Forms
                     table.Columns.Add(LanguageManager.GetString("EstimatedDate"), typeof(DateTime));
                     table.Columns.Add(LanguageManager.GetString("Activated"), typeof(bool));
 
-                    DestinationInterface destination = JsonConvert.DeserializeObject<DestinationInterface>(response.Content);
                     fillDataTable(table, destination);
 
                     dataGridViewDestination.DataSource = table;
@@ -118,25 +101,8 @@ namespace Aplicacion_Choferes.Forms
             }
         }
 
+
         #region getAllDestinations
-
-        private static RestResponse getAllDestinations()
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest("/api/v1/destinos", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return null;
-            }
-        }
 
         private void fillDataTableWithDestinations(DataTable table, List<DestinationInterface> destinations)
         {
@@ -155,9 +121,9 @@ namespace Aplicacion_Choferes.Forms
 
         private void buttonGetAllDestinations_Click(object sender, EventArgs e)
         {
-            RestResponse response = getAllDestinations();
+            List<DestinationInterface> destinations = destinationApiRequest.GetAllDestinations();
 
-            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            if (destinations != null)
             {
                 DataTable table = new DataTable();
                 table.Columns.Add("ID", typeof(int));
@@ -167,7 +133,6 @@ namespace Aplicacion_Choferes.Forms
                 table.Columns.Add(LanguageManager.GetString("EstimatedDate"), typeof(DateTime));
                 table.Columns.Add(LanguageManager.GetString("Activated"), typeof(bool));
 
-                List<DestinationInterface> destinations = JsonConvert.DeserializeObject<List<DestinationInterface>>(response.Content);
                 fillDataTableWithDestinations(table, destinations);
 
                 dataGridViewDestination.DataSource = table;
@@ -177,6 +142,7 @@ namespace Aplicacion_Choferes.Forms
                 MessageBox.Show(Messages.NotFound);
             }
         }
+
         #endregion getAlldestination
     }
 }
