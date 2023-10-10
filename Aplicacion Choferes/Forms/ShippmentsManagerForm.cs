@@ -1,4 +1,5 @@
 ﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.ApiRequests;
 using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
@@ -18,6 +19,8 @@ namespace Aplicacion_Choferes.Forms
     {
 
         public event Action LanguageChanged;
+        private ApiRequestShipmentManager shipmentsApiRequest = new ApiRequestShipmentManager("http://localhost:50294");
+
 
         public ShippmentsManagerForm()
         {
@@ -55,24 +58,6 @@ namespace Aplicacion_Choferes.Forms
             return JsonConvert.DeserializeObject<List<ShippmentsInterface>>(content);
         }
 
-        private static RestResponse getShippByDestinationID(int destinationID)
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/destino/recorrido/{destinationID}", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return null;
-            }
-        }
-
         private static void fillDataTable(DataTable table, ShippmentsInterface shipp)
         {
             DataRow row = table.NewRow();
@@ -87,9 +72,9 @@ namespace Aplicacion_Choferes.Forms
         {
             if (int.TryParse(txtBoxIDDestination.Text, out int searchID))
             {
-                RestResponse response = getShippByDestinationID(searchID);
+                ShippmentsInterface shipp = shipmentsApiRequest.GetShippmentsByDestinationID(searchID);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (shipp != null)
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Destino", typeof(int));
@@ -97,7 +82,6 @@ namespace Aplicacion_Choferes.Forms
                     table.Columns.Add(LanguageManager.GetString("TypeTravel"), typeof(string));
                     table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
-                    ShippmentsInterface shipp = JsonConvert.DeserializeObject<ShippmentsInterface>(response.Content);
                     fillDataTable(table, shipp);
 
                     dataGridViewShippments.DataSource = table;
@@ -127,24 +111,6 @@ namespace Aplicacion_Choferes.Forms
             return JsonConvert.DeserializeObject<List<ShippmentsInterface>>(content);
         }
 
-        private static RestResponse getShippByStoreHouseID(int storehouseID)
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/almacen/recorrido/{storehouseID}", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return null;
-            }
-        }
-
         private static void fillDataTableStoreHouseData(DataTable table, ShippmentsInterface shipp)
         {
             DataRow row = table.NewRow();
@@ -159,9 +125,9 @@ namespace Aplicacion_Choferes.Forms
         {
             if (int.TryParse(txtBoxStoreHouseID.Text, out int searchID))
             {
-                RestResponse response = getShippByDestinationID(searchID);
+                ShippmentsInterface shipp = shipmentsApiRequest.GetShippmentsByStoreHouseID(searchID);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (shipp != null)
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Destino", typeof(int));
@@ -169,7 +135,6 @@ namespace Aplicacion_Choferes.Forms
                     table.Columns.Add(LanguageManager.GetString("TypeTravel"), typeof(string));
                     table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
 
-                    ShippmentsInterface shipp = JsonConvert.DeserializeObject<ShippmentsInterface>(response.Content);
                     fillDataTable(table, shipp);
 
                     dataGridViewShippments.DataSource = table;

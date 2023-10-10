@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiRequests\ApiRequestDestinations.cs" />
+    <Compile Include="ApiRequests\ApiRequestShipmentManager.cs" />
     <Compile Include="ApiRequests\ApiRequestTravels.cs" />
     <Compile Include="Interfaces\DestinationInterface.cs" />
     <Compile Include="Interfaces\ShippmentsInterface.cs" />
