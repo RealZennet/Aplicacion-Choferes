@@ -55,24 +55,6 @@ namespace Aplicacion_Choferes.Forms
             return JsonConvert.DeserializeObject<List<TruckerCarryInterface>>(content);
         }
 
-        private static RestResponse getCarrieByID(int truckID)
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/llevan/{truckID}", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return null;
-            }
-        }
-
         private static void fillDataTable(DataTable table, TruckerCarryInterface carry)
         {
             DataRow row = table.NewRow();
