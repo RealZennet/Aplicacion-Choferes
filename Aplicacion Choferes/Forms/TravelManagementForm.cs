@@ -1,4 +1,5 @@
 ﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.ApiRequests;
 using Aplicacion_Choferes.APIRequests;
 using Newtonsoft.Json;
 using RestSharp;
@@ -17,6 +18,7 @@ namespace Aplicacion_Choferes.Forms
     public partial class TravelManagementForm : Form
     {
         public event Action LanguageChanged;
+        private ApiRequestTravels travelsApiRequest = new ApiRequestTravels("http://localhost:50294");
 
         public TravelManagementForm()
         {
@@ -30,6 +32,7 @@ namespace Aplicacion_Choferes.Forms
             {
                 mainForm.LanguageChanged += UpdateLanguage;
             }
+
         }
 
         private void UpdateLanguage()
@@ -63,24 +66,6 @@ namespace Aplicacion_Choferes.Forms
             return JsonConvert.DeserializeObject<List<TravelsInterface>>(content);
         }
 
-        private static RestResponse getTravelsByTruckID(int truckID)
-        {
-            try
-            {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/transporta/{truckID}", Method.Get);
-                request.AddHeader("Accept", "application/json");
-
-                RestResponse response = client.Execute(request);
-                return response;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Messages.InvalidID + " : " + ex.Message);
-                return null;
-            }
-        }
-
         private static void fillDataTable(DataTable table, TravelsInterface travels)
         {
             DataRow row = table.NewRow();
@@ -95,9 +80,9 @@ namespace Aplicacion_Choferes.Forms
         {
             if (int.TryParse(txtBoxIDTruck.Text, out int searchID))
             {
-                RestResponse response = getTravelsByTruckID(searchID);
+                TravelsInterface travel = travelsApiRequest.GetTravelByTruckID(searchID);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                if (travel != null)
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camión", typeof(int));
@@ -105,7 +90,6 @@ namespace Aplicacion_Choferes.Forms
                     table.Columns.Add(LanguageManager.GetString("IDDestination"), typeof(int));
                     table.Columns.Add(LanguageManager.GetString("Status"), typeof(string));
 
-                    TravelsInterface travel = JsonConvert.DeserializeObject<TravelsInterface>(response.Content);
                     fillDataTable(table, travel);
 
                     dataGridViewTravels.DataSource = table;
@@ -123,42 +107,34 @@ namespace Aplicacion_Choferes.Forms
             }
         }
 
-        private bool editTravel(string status, int truckerID)
+        private void buttonChangeStatus_Click(object sender, EventArgs e)
         {
-            try
+            if (!validateInputsUser())
             {
-                RestClient client = new RestClient("http://localhost:50294");
-                RestRequest request = new RestRequest($"/api/v1/transporta/{truckerID}", Method.Patch);
-                request.AddHeader("Accept", "application/json");
-                request.AddHeader("Content-Type", "application/json");
+                MessageBox.Show(Messages.CompleteAllBoxAndStatus);
+                return;
+            }
 
-                var requestBody = new
+            if (int.TryParse(txtBoxIDTruck.Text, out int truckID) &&
+                int.TryParse(txtBoxIDBatch.Text, out int batchID) &&
+                int.TryParse(txtBoxDestination.Text, out int destinationID) &&
+                int.TryParse(txtBoxTruckerID.Text, out int truckerID))
+            {
+                if (travelsApiRequest.EditTravel(comboBoxStatusShipp.SelectedItem.ToString(), truckerID))
                 {
-                    newShippingStatus = status
-                };
-
-                var jsonBody = JsonConvert.SerializeObject(requestBody);
-                request.AddParameter("application/json", jsonBody, ParameterType.RequestBody);
-
-                RestResponse response = client.Execute(request);
-
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    return true;
+                    MessageBox.Show(Messages.Successful + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
+                    clearTxtBoxs();
                 }
                 else
                 {
-                    MessageBox.Show(Messages.Error + " : " + response.StatusCode);
-                    return false;
+                    MessageBox.Show(Messages.Error + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(Messages.Error + " : " + ex.Message);
-                return false;
+                MessageBox.Show(Messages.InvalidID + "'s");
             }
         }
-
 
         private bool validateInputsUser()
         {
@@ -184,35 +160,6 @@ namespace Aplicacion_Choferes.Forms
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttonChangeStatus_Click(object sender, EventArgs e)
-        {
-            if (!validateInputsUser())
-            {
-                MessageBox.Show(Messages.CompleteAllBoxAndStatus);
-                return;
-            }
-
-            if (int.TryParse(txtBoxIDTruck.Text, out int truckID) &&
-                int.TryParse(txtBoxIDBatch.Text, out int batchID) &&
-                int.TryParse(txtBoxDestination.Text, out int destinationID) &&
-                int.TryParse(txtBoxTruckerID.Text, out int truckerID))
-            {
-                if (editTravel(comboBoxStatusShipp.SelectedItem.ToString(), truckerID))
-                {
-                    MessageBox.Show(Messages.Successful + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
-                    clearTxtBoxs();
-                }
-                else
-                {
-                    MessageBox.Show(Messages.Error + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
-                }
-            }
-            else
-            {
-                MessageBox.Show(Messages.InvalidID+"'s");
-            }
         }
 
     }

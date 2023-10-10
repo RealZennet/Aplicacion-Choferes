@@ -77,11 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APIRequests\DestinationInterface.cs" />
-    <Compile Include="APIRequests\ShippmentsInterface.cs" />
-    <Compile Include="APIRequests\TravelsInterface.cs" />
-    <Compile Include="APIRequests\TruckerCarryInterface.cs" />
-    <Compile Include="APIRequests\TruckerDriveTruckInterface.cs" />
+    <Compile Include="ApiRequests\ApiRequestTravels.cs" />
+    <Compile Include="Interfaces\DestinationInterface.cs" />
+    <Compile Include="Interfaces\ShippmentsInterface.cs" />
+    <Compile Include="Interfaces\TravelsInterface.cs" />
+    <Compile Include="Interfaces\TruckerCarryInterface.cs" />
+    <Compile Include="Interfaces\TruckerDriveTruckInterface.cs" />
     <Compile Include="Forms\DestinationManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
