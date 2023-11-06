@@ -157,5 +157,10 @@ namespace Aplicacion_Choferes.Forms
             UpdateUI();
             LanguageChanged?.Invoke();
         }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

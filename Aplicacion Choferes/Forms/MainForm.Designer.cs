@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelFormsLoader = new System.Windows.Forms.Panel();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.buttonTruckersManagement = new System.Windows.Forms.Button();
             this.buttonAssignedTruckToTrucker = new System.Windows.Forms.Button();
             this.buttonDestinations = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panelFormsLoader.SuspendLayout();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
@@ -58,6 +58,15 @@
             this.panelFormsLoader.Name = "panelFormsLoader";
             this.panelFormsLoader.Size = new System.Drawing.Size(773, 559);
             this.panelFormsLoader.TabIndex = 5;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(773, 559);
+            this.webBrowser1.TabIndex = 0;
             // 
             // buttonTruckersManagement
             // 
@@ -227,15 +236,6 @@
             this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
             this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(773, 559);
-            this.webBrowser1.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,6 +246,7 @@
             this.Controls.Add(this.leftPanelContainer);
             this.Name = "MainForm";
             this.Text = "Aplicacion Choferes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelFormsLoader.ResumeLayout(false);
             this.leftPanelContainer.ResumeLayout(false);
