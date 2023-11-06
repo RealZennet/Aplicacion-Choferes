@@ -24,7 +24,7 @@ namespace Aplicacion_Choferes.Forms
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            webBrowser1.Navigate("https://google.com");
         }
 
         private void customMenus()

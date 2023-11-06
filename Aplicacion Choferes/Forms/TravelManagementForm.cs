@@ -5,12 +5,10 @@ using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Aplicacion_Choferes.Forms
@@ -24,31 +22,28 @@ namespace Aplicacion_Choferes.Forms
         {
             InitializeComponent();
             comboBoxStatusShipp.Items.Add("Entregado");
-            comboBoxStatusShipp.Items.Add("EnCamino");
+            comboBoxStatusShipp.Items.Add("En Camino");
             comboBoxStatusShipp.Items.Add("Retrasado");
-            comboBoxStatusShipp.Items.Add("NoEnviado");
+            comboBoxStatusShipp.Items.Add("No Enviado");
+
             MainForm mainForm = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
             if (mainForm != null)
             {
                 mainForm.LanguageChanged += UpdateLanguage;
             }
-
         }
 
         private void UpdateLanguage()
         {
             buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
             buttonChangeStatus.Text = LanguageManager.GetString("ChangeStatus");
-            buttonRefresh.Text = LanguageManager.GetString("Refresh");
             buttonSearch.Text = LanguageManager.GetString("Search");
-            buttonDelete.Text = LanguageManager.GetString("Delete");
 
             labelIDTruck.Text = LanguageManager.GetString("IDTruck");
             labelIDLotToAssign.Text = LanguageManager.GetString("LotIDToAssign");
             labelIDDestination.Text = LanguageManager.GetString("IDDestination");
             labelIDTrucker.Text = LanguageManager.GetString("IDTrucker");
             labelStatus.Text = LanguageManager.GetString("Status");
-
         }
 
         private void buttonBackToMainMenu_Click(object sender, EventArgs e)
@@ -120,14 +115,16 @@ namespace Aplicacion_Choferes.Forms
                 int.TryParse(txtBoxDestination.Text, out int destinationID) &&
                 int.TryParse(txtBoxTruckerID.Text, out int truckerID))
             {
-                if (travelsApiRequest.EditTravel(comboBoxStatusShipp.SelectedItem.ToString(), truckerID))
+                string selectedStatus = comboBoxStatusShipp.SelectedItem as string;
+
+                if (travelsApiRequest.EditTravel(selectedStatus, truckID))
                 {
-                    MessageBox.Show(Messages.Successful + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
+                    MessageBox.Show(Messages.Successful + ". ->" + selectedStatus);
                     clearTxtBoxs();
                 }
                 else
                 {
-                    MessageBox.Show(Messages.Error + ". ->" + comboBoxStatusShipp.SelectedItem.ToString());
+                    MessageBox.Show("Http Error");
                 }
             }
             else
@@ -135,6 +132,7 @@ namespace Aplicacion_Choferes.Forms
                 MessageBox.Show(Messages.InvalidID + "'s");
             }
         }
+
 
         private bool validateInputsUser()
         {
@@ -157,10 +155,6 @@ namespace Aplicacion_Choferes.Forms
             txtBoxTruckerID.Clear();
         }
 
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }

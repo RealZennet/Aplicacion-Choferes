@@ -36,11 +36,13 @@
             this.buttonShippments = new System.Windows.Forms.Button();
             this.leftPanelContainer = new System.Windows.Forms.Panel();
             this.settingsManagerPanel = new System.Windows.Forms.Panel();
+            this.buttonEnglishLanguage = new System.Windows.Forms.Button();
+            this.buttonLanguageSpanish = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
-            this.buttonEnglishLanguage = new System.Windows.Forms.Button();
-            this.buttonLanguageSpanish = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.panelFormsLoader.SuspendLayout();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,6 +53,7 @@
             // 
             this.panelFormsLoader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelFormsLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
+            this.panelFormsLoader.Controls.Add(this.webBrowser1);
             this.panelFormsLoader.Location = new System.Drawing.Point(258, 31);
             this.panelFormsLoader.Name = "panelFormsLoader";
             this.panelFormsLoader.Size = new System.Drawing.Size(773, 559);
@@ -155,6 +158,36 @@
             this.settingsManagerPanel.Size = new System.Drawing.Size(250, 72);
             this.settingsManagerPanel.TabIndex = 1;
             // 
+            // buttonEnglishLanguage
+            // 
+            this.buttonEnglishLanguage.FlatAppearance.BorderSize = 0;
+            this.buttonEnglishLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEnglishLanguage.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonEnglishLanguage.Location = new System.Drawing.Point(3, -1);
+            this.buttonEnglishLanguage.Name = "buttonEnglishLanguage";
+            this.buttonEnglishLanguage.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonEnglishLanguage.Size = new System.Drawing.Size(244, 29);
+            this.buttonEnglishLanguage.TabIndex = 7;
+            this.buttonEnglishLanguage.Text = "English";
+            this.buttonEnglishLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonEnglishLanguage.UseVisualStyleBackColor = true;
+            this.buttonEnglishLanguage.Click += new System.EventHandler(this.buttonEnglishLanguage_Click);
+            // 
+            // buttonLanguageSpanish
+            // 
+            this.buttonLanguageSpanish.FlatAppearance.BorderSize = 0;
+            this.buttonLanguageSpanish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLanguageSpanish.ForeColor = System.Drawing.Color.Gainsboro;
+            this.buttonLanguageSpanish.Location = new System.Drawing.Point(3, 37);
+            this.buttonLanguageSpanish.Name = "buttonLanguageSpanish";
+            this.buttonLanguageSpanish.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.buttonLanguageSpanish.Size = new System.Drawing.Size(244, 28);
+            this.buttonLanguageSpanish.TabIndex = 6;
+            this.buttonLanguageSpanish.Text = "Spanish";
+            this.buttonLanguageSpanish.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLanguageSpanish.UseVisualStyleBackColor = true;
+            this.buttonLanguageSpanish.Click += new System.EventHandler(this.buttonLanguageSpanish_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -194,35 +227,14 @@
             this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
             this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
-            // buttonEnglishLanguage
+            // webBrowser1
             // 
-            this.buttonEnglishLanguage.FlatAppearance.BorderSize = 0;
-            this.buttonEnglishLanguage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEnglishLanguage.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonEnglishLanguage.Location = new System.Drawing.Point(3, -1);
-            this.buttonEnglishLanguage.Name = "buttonEnglishLanguage";
-            this.buttonEnglishLanguage.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonEnglishLanguage.Size = new System.Drawing.Size(244, 29);
-            this.buttonEnglishLanguage.TabIndex = 7;
-            this.buttonEnglishLanguage.Text = "English";
-            this.buttonEnglishLanguage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEnglishLanguage.UseVisualStyleBackColor = true;
-            this.buttonEnglishLanguage.Click += new System.EventHandler(this.buttonEnglishLanguage_Click);
-            // 
-            // buttonLanguageSpanish
-            // 
-            this.buttonLanguageSpanish.FlatAppearance.BorderSize = 0;
-            this.buttonLanguageSpanish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLanguageSpanish.ForeColor = System.Drawing.Color.Gainsboro;
-            this.buttonLanguageSpanish.Location = new System.Drawing.Point(3, 37);
-            this.buttonLanguageSpanish.Name = "buttonLanguageSpanish";
-            this.buttonLanguageSpanish.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.buttonLanguageSpanish.Size = new System.Drawing.Size(244, 28);
-            this.buttonLanguageSpanish.TabIndex = 6;
-            this.buttonLanguageSpanish.Text = "Spanish";
-            this.buttonLanguageSpanish.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLanguageSpanish.UseVisualStyleBackColor = true;
-            this.buttonLanguageSpanish.Click += new System.EventHandler(this.buttonLanguageSpanish_Click);
+            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(773, 559);
+            this.webBrowser1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -235,6 +247,7 @@
             this.Name = "MainForm";
             this.Text = "Aplicacion Choferes";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panelFormsLoader.ResumeLayout(false);
             this.leftPanelContainer.ResumeLayout(false);
             this.settingsManagerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -258,5 +271,6 @@
         private System.Windows.Forms.Button buttonTruckerCarryManagement;
         private System.Windows.Forms.Button buttonEnglishLanguage;
         private System.Windows.Forms.Button buttonLanguageSpanish;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

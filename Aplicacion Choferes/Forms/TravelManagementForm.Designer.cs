@@ -30,7 +30,6 @@
         {
             this.txtBoxDestination = new System.Windows.Forms.TextBox();
             this.buttonBackToMainMenu = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.labelIDLotToAssign = new System.Windows.Forms.Label();
             this.txtBoxIDBatch = new System.Windows.Forms.TextBox();
@@ -65,16 +64,6 @@
             this.buttonBackToMainMenu.Text = "Volver";
             this.buttonBackToMainMenu.UseVisualStyleBackColor = true;
             this.buttonBackToMainMenu.Click += new System.EventHandler(this.buttonBackToMainMenu_Click);
-            // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Location = new System.Drawing.Point(333, 336);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(147, 26);
-            this.buttonRefresh.TabIndex = 55;
-            this.buttonRefresh.Text = "Recargar";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // buttonDelete
             // 
@@ -165,7 +154,7 @@
             // 
             // buttonChangeStatus
             // 
-            this.buttonChangeStatus.Location = new System.Drawing.Point(333, 368);
+            this.buttonChangeStatus.Location = new System.Drawing.Point(333, 336);
             this.buttonChangeStatus.Name = "buttonChangeStatus";
             this.buttonChangeStatus.Size = new System.Drawing.Size(147, 26);
             this.buttonChangeStatus.TabIndex = 62;
@@ -204,7 +193,6 @@
             this.Controls.Add(this.labelIDDestination);
             this.Controls.Add(this.txtBoxDestination);
             this.Controls.Add(this.buttonBackToMainMenu);
-            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.labelIDLotToAssign);
             this.Controls.Add(this.txtBoxIDBatch);
@@ -224,7 +212,6 @@
 
         private System.Windows.Forms.TextBox txtBoxDestination;
         private System.Windows.Forms.Button buttonBackToMainMenu;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Label labelIDLotToAssign;
         private System.Windows.Forms.TextBox txtBoxIDBatch;
