@@ -20,11 +20,12 @@ namespace Aplicacion_Choferes.Forms
             customMenus();
             LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
             UpdateUI();
+            webBrowserMap.Navigate("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("https://google.com");
+            
         }
 
         private void customMenus()

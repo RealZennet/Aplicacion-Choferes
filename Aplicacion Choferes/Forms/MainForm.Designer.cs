@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelFormsLoader = new System.Windows.Forms.Panel();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.buttonTruckersManagement = new System.Windows.Forms.Button();
             this.buttonAssignedTruckToTrucker = new System.Windows.Forms.Button();
             this.buttonDestinations = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
+            this.webBrowserMap = new System.Windows.Forms.WebBrowser();
             this.panelFormsLoader.SuspendLayout();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
@@ -53,21 +53,11 @@
             // 
             this.panelFormsLoader.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelFormsLoader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
-            this.panelFormsLoader.Controls.Add(this.webBrowser1);
-            this.panelFormsLoader.Location = new System.Drawing.Point(258, 31);
+            this.panelFormsLoader.Controls.Add(this.webBrowserMap);
+            this.panelFormsLoader.Location = new System.Drawing.Point(258, 26);
             this.panelFormsLoader.Name = "panelFormsLoader";
-            this.panelFormsLoader.Size = new System.Drawing.Size(773, 559);
+            this.panelFormsLoader.Size = new System.Drawing.Size(752, 544);
             this.panelFormsLoader.TabIndex = 5;
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(773, 559);
-            this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0", System.UriKind.Absolute);
             // 
             // buttonTruckersManagement
             // 
@@ -237,6 +227,16 @@
             this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
             this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
+            // webBrowserMap
+            // 
+            this.webBrowserMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowserMap.Location = new System.Drawing.Point(0, 0);
+            this.webBrowserMap.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserMap.Name = "webBrowserMap";
+            this.webBrowserMap.Size = new System.Drawing.Size(752, 544);
+            this.webBrowserMap.TabIndex = 0;
+            this.webBrowserMap.Url = new System.Uri("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0", System.UriKind.Absolute);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +273,6 @@
         private System.Windows.Forms.Button buttonTruckerCarryManagement;
         private System.Windows.Forms.Button buttonEnglishLanguage;
         private System.Windows.Forms.Button buttonLanguageSpanish;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.WebBrowser webBrowserMap;
     }
 }
