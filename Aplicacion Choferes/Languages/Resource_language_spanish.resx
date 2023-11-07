@@ -318,4 +318,7 @@
   <data name="TypeTravel" xml:space="preserve">
     <value>Tipo de recorrido</value>
   </data>
+  <data name="IDTrucker" xml:space="preserve">
+    <value>ID Camionero</value>
+  </data>
 </root>

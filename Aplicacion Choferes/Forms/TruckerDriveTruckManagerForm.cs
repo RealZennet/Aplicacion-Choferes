@@ -28,12 +28,14 @@ namespace Aplicacion_Choferes.Forms
             {
                 mainForm.LanguageChanged += UpdateLanguage;
             }
+            LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            LanguageManager.Initialize(typeof(Languages.Resource_language_english));
         }
 
         private void UpdateLanguage()
         {
             buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
-            buttonSearchByTruckByTruckerID.Text = LanguageManager.GetString("IDTrucker");
+            buttonSearchByTruckByTruckerID.Text = LanguageManager.GetString("Search");
 
             labelIDTrucker.Text = LanguageManager.GetString("IDTrucker");
 

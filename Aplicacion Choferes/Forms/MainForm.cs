@@ -19,6 +19,7 @@ namespace Aplicacion_Choferes.Forms
             InitializeComponent();
             customMenus();
             LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            LanguageManager.Initialize(typeof(Languages.Resource_language_english));
             UpdateUI();
             webBrowserMap.Navigate("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0");
         }

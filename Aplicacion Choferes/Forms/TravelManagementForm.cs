@@ -31,6 +31,8 @@ namespace Aplicacion_Choferes.Forms
             {
                 mainForm.LanguageChanged += UpdateLanguage;
             }
+            LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            LanguageManager.Initialize(typeof(Languages.Resource_language_english));
         }
 
         private void UpdateLanguage()

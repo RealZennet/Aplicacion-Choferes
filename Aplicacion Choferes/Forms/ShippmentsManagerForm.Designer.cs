@@ -64,7 +64,7 @@
             // 
             this.txtBoxIDDestination.Location = new System.Drawing.Point(12, 295);
             this.txtBoxIDDestination.Name = "txtBoxIDDestination";
-            this.txtBoxIDDestination.Size = new System.Drawing.Size(113, 20);
+            this.txtBoxIDDestination.Size = new System.Drawing.Size(57, 20);
             this.txtBoxIDDestination.TabIndex = 59;
             // 
             // labelIDDestination
@@ -79,7 +79,7 @@
             // labelStoreHouse
             // 
             this.labelStoreHouse.AutoSize = true;
-            this.labelStoreHouse.Location = new System.Drawing.Point(196, 276);
+            this.labelStoreHouse.Location = new System.Drawing.Point(133, 276);
             this.labelStoreHouse.Name = "labelStoreHouse";
             this.labelStoreHouse.Size = new System.Drawing.Size(62, 13);
             this.labelStoreHouse.TabIndex = 62;
@@ -87,16 +87,16 @@
             // 
             // txtBoxStoreHouseID
             // 
-            this.txtBoxStoreHouseID.Location = new System.Drawing.Point(196, 295);
+            this.txtBoxStoreHouseID.Location = new System.Drawing.Point(136, 295);
             this.txtBoxStoreHouseID.Name = "txtBoxStoreHouseID";
-            this.txtBoxStoreHouseID.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxStoreHouseID.Size = new System.Drawing.Size(50, 20);
             this.txtBoxStoreHouseID.TabIndex = 61;
             // 
             // buttonSearchByDestinationID
             // 
             this.buttonSearchByDestinationID.Location = new System.Drawing.Point(12, 336);
             this.buttonSearchByDestinationID.Name = "buttonSearchByDestinationID";
-            this.buttonSearchByDestinationID.Size = new System.Drawing.Size(113, 23);
+            this.buttonSearchByDestinationID.Size = new System.Drawing.Size(57, 23);
             this.buttonSearchByDestinationID.TabIndex = 63;
             this.buttonSearchByDestinationID.Text = "Buscar por destino";
             this.buttonSearchByDestinationID.UseVisualStyleBackColor = true;
@@ -104,9 +104,9 @@
             // 
             // buttonSearchByStoreHouseID
             // 
-            this.buttonSearchByStoreHouseID.Location = new System.Drawing.Point(196, 336);
+            this.buttonSearchByStoreHouseID.Location = new System.Drawing.Point(136, 336);
             this.buttonSearchByStoreHouseID.Name = "buttonSearchByStoreHouseID";
-            this.buttonSearchByStoreHouseID.Size = new System.Drawing.Size(121, 23);
+            this.buttonSearchByStoreHouseID.Size = new System.Drawing.Size(50, 23);
             this.buttonSearchByStoreHouseID.TabIndex = 64;
             this.buttonSearchByStoreHouseID.Text = "Buscar por almacen";
             this.buttonSearchByStoreHouseID.UseVisualStyleBackColor = true;

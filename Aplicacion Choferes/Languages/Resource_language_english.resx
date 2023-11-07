@@ -315,4 +315,7 @@
   <data name="TypeTravel" xml:space="preserve">
     <value>Type Travel</value>
   </data>
+  <data name="IDTrucker" xml:space="preserve">
+    <value>ID Trucker</value>
+  </data>
 </root>

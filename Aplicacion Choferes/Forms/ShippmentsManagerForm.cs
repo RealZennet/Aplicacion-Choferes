@@ -30,6 +30,8 @@ namespace Aplicacion_Choferes.Forms
             {
                 mainForm.LanguageChanged += UpdateLanguage;
             }
+            LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
+            LanguageManager.Initialize(typeof(Languages.Resource_language_english));
         }
 
         private void UpdateLanguage()
@@ -39,7 +41,7 @@ namespace Aplicacion_Choferes.Forms
             buttonSearchByStoreHouseID.Text = LanguageManager.GetString("SearchByStoreHouseID");
 
             labelIDDestination.Text = LanguageManager.GetString("IDDestination");
-            labelStoreHouse.Text = LanguageManager.GetString("StoreHouse");
+            labelStoreHouse.Text = LanguageManager.GetString("StoreHouseID");
 
         }
 
