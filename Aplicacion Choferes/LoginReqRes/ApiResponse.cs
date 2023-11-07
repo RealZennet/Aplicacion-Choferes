@@ -10,5 +10,6 @@ namespace Aplicacion_Choferes.LoginReqRes
     {
         public string resultado { get; set; }
         public string tipo { get; set; }
+        public int id { get; set; }
     }
 }

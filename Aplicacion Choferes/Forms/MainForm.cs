@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aplicacion_Almacen.Languages;
+using Aplicacion_Choferes.LoginReqRes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,16 +15,22 @@ namespace Aplicacion_Choferes.Forms
     public partial class MainForm : Form
     {
         public event Action LanguageChanged;
+        private ApiResponse userApiResponse;
+        private ApiRequest userInfo;
 
-        public MainForm()
+        public MainForm(ApiResponse userData, ApiRequest usernameInfo)
         {
             InitializeComponent();
             customMenus();
             LanguageManager.Initialize(typeof(Languages.Resource_language_spanish));
             LanguageManager.Initialize(typeof(Languages.Resource_language_english));
-            UpdateUI();
             webBrowserMap.Navigate("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0");
+            userApiResponse = userData;
+            userInfo = usernameInfo;
+            UpdateUI();
         }
+
+
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -144,6 +152,8 @@ namespace Aplicacion_Choferes.Forms
             buttonTruckerCarryManagement.Text = LanguageManager.GetString("AssignedLotToTrucker");
             buttonDestinations.Text = LanguageManager.GetString("Destinations");
             buttonAssignedTruckToTrucker.Text = LanguageManager.GetString("AssignedTruck");
+            labelTruckerID.Text = LanguageManager.GetString("TruckerID") + $": {userApiResponse.id}";
+
         }
 
         private void buttonEnglishLanguage_Click(object sender, EventArgs e)

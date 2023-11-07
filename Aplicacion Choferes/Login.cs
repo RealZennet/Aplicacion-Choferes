@@ -17,6 +17,9 @@ namespace Aplicacion_Choferes
 {
     public partial class Login : Form
     {
+
+        private int userId;
+
         public Login()
         {
             InitializeComponent();
@@ -32,12 +35,7 @@ namespace Aplicacion_Choferes
             return JsonConvert.DeserializeObject<ApiResponse>(jsoncontent);
         }
 
-        private void openPrincipalForm()
-        {
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
-            this.Hide();
-        }
+
 
         private RestResponse Authenticate()
         {
@@ -74,11 +72,18 @@ namespace Aplicacion_Choferes
                 {
                     ApiResponse apiResponse = this.deserialize(response.Content);
                     string result = apiResponse.resultado;
-                    string tipo = apiResponse.tipo;
+                    string role = apiResponse.tipo;
+                    ApiRequest apiRequest = new ApiRequest();
 
-                    if (result == "OK" && tipo == "camionero")
+                    if (apiResponse != null && result == "OK" && role == "camionero")
                     {
-                        openPrincipalForm();
+                        apiRequest.Username = textBox1.Text;
+
+                        userId = apiResponse.id;
+
+                        MainForm mainForm = new MainForm(apiResponse, apiRequest);
+                        mainForm.Show();
+                        this.Hide();
                     }
                     else
                     {

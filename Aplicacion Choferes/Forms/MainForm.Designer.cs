@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panelFormsLoader = new System.Windows.Forms.Panel();
+            this.webBrowserMap = new System.Windows.Forms.WebBrowser();
             this.buttonTruckersManagement = new System.Windows.Forms.Button();
             this.buttonAssignedTruckToTrucker = new System.Windows.Forms.Button();
             this.buttonDestinations = new System.Windows.Forms.Button();
@@ -41,7 +42,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelTruckersManagementContainer = new System.Windows.Forms.Panel();
             this.buttonTruckerCarryManagement = new System.Windows.Forms.Button();
-            this.webBrowserMap = new System.Windows.Forms.WebBrowser();
+            this.labelTruckerID = new System.Windows.Forms.Label();
             this.panelFormsLoader.SuspendLayout();
             this.leftPanelContainer.SuspendLayout();
             this.settingsManagerPanel.SuspendLayout();
@@ -58,6 +59,16 @@
             this.panelFormsLoader.Name = "panelFormsLoader";
             this.panelFormsLoader.Size = new System.Drawing.Size(752, 544);
             this.panelFormsLoader.TabIndex = 5;
+            // 
+            // webBrowserMap
+            // 
+            this.webBrowserMap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.webBrowserMap.Location = new System.Drawing.Point(0, 0);
+            this.webBrowserMap.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowserMap.Name = "webBrowserMap";
+            this.webBrowserMap.Size = new System.Drawing.Size(752, 544);
+            this.webBrowserMap.TabIndex = 0;
+            this.webBrowserMap.Url = new System.Uri("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0", System.UriKind.Absolute);
             // 
             // buttonTruckersManagement
             // 
@@ -227,15 +238,15 @@
             this.buttonTruckerCarryManagement.UseVisualStyleBackColor = true;
             this.buttonTruckerCarryManagement.Click += new System.EventHandler(this.buttonTruckerCarryManagement_Click);
             // 
-            // webBrowserMap
+            // labelTruckerID
             // 
-            this.webBrowserMap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowserMap.Location = new System.Drawing.Point(0, 0);
-            this.webBrowserMap.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowserMap.Name = "webBrowserMap";
-            this.webBrowserMap.Size = new System.Drawing.Size(752, 544);
-            this.webBrowserMap.TabIndex = 0;
-            this.webBrowserMap.Url = new System.Uri("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0", System.UriKind.Absolute);
+            this.labelTruckerID.AutoSize = true;
+            this.labelTruckerID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.labelTruckerID.Location = new System.Drawing.Point(256, -1);
+            this.labelTruckerID.Name = "labelTruckerID";
+            this.labelTruckerID.Size = new System.Drawing.Size(97, 24);
+            this.labelTruckerID.TabIndex = 6;
+            this.labelTruckerID.Text = "TruckerID:";
             // 
             // MainForm
             // 
@@ -243,6 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(47)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(1022, 580);
+            this.Controls.Add(this.labelTruckerID);
             this.Controls.Add(this.panelFormsLoader);
             this.Controls.Add(this.leftPanelContainer);
             this.Name = "MainForm";
@@ -255,6 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTruckersManagementContainer.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -274,5 +287,6 @@
         private System.Windows.Forms.Button buttonEnglishLanguage;
         private System.Windows.Forms.Button buttonLanguageSpanish;
         private System.Windows.Forms.WebBrowser webBrowserMap;
+        private System.Windows.Forms.Label labelTruckerID;
     }
 }
