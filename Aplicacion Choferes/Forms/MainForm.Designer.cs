@@ -67,6 +67,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(773, 559);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("https://www.bing.com/maps?cp=-34.884241~-56.155243&lvl=11.0", System.UriKind.Absolute);
             // 
             // buttonTruckersManagement
             // 
