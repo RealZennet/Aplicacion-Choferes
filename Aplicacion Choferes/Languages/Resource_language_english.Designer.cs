@@ -97,6 +97,15 @@ namespace Aplicacion_Choferes.Languages {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Assigned Lot To Truck.
+        /// </summary>
+        internal static string AssignedLotToTruck {
+            get {
+                return ResourceManager.GetString("AssignedLotToTruck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Assigned Lot to trucker.
         /// </summary>
         internal static string AssignedLotToTrucker {

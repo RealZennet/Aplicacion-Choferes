@@ -67,9 +67,10 @@ namespace Aplicacion_Choferes.Forms
         {
             DataRow row = table.NewRow();
             row["ID Camión"] = travels.IDTruck;
-            row[LanguageManager.GetString("LotID")] = travels.IDBatch;
-            row[LanguageManager.GetString("IDDestination")] = travels.IDDestination;
-            row[LanguageManager.GetString("Status")] = travels.ShippingStatus;
+            row["ID Lote"] = travels.IDBatch;
+            row["ID Destino"] = travels.IDDestination;
+            row["Posicion"] = travels.Position;
+            row["Estado"] = travels.ShippingStatus;
             table.Rows.Add(row);
         }
 
@@ -83,9 +84,10 @@ namespace Aplicacion_Choferes.Forms
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camión", typeof(int));
-                    table.Columns.Add(LanguageManager.GetString("LotID"), typeof(int));
-                    table.Columns.Add(LanguageManager.GetString("IDDestination"), typeof(int));
-                    table.Columns.Add(LanguageManager.GetString("Status"), typeof(string));
+                    table.Columns.Add("ID Lote", typeof(string));
+                    table.Columns.Add("ID Destino", typeof(int));
+                    table.Columns.Add("Posicion", typeof(string));
+                    table.Columns.Add("Estado", typeof(string));
 
                     fillDataTable(table, travel);
 

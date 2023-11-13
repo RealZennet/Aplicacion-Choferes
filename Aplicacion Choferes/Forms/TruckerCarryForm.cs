@@ -41,9 +41,9 @@ namespace Aplicacion_Choferes.Forms
         private void UpdateLanguage()
         {
             buttonBackToMainMenu.Text = LanguageManager.GetString("Back");
-            buttonSearchByTruckerID.Text = LanguageManager.GetString("TruckerID");
+            buttonSearchByTruckerID.Text = LanguageManager.GetString("Search");
 
-            labelIDTrucker.Text = LanguageManager.GetString("TruckerID");
+            labelIDTrucker.Text = LanguageManager.GetString("IDTruck");
 
         }
 
@@ -61,8 +61,9 @@ namespace Aplicacion_Choferes.Forms
         {
             DataRow row = table.NewRow();
             row["ID Camion"] = carry.IDTruck;
-            row[LanguageManager.GetString("LotID")] = carry.IDBatch;
-            row[LanguageManager.GetString("ShipmentDate")] = carry.ShippmentDate;
+            row["Lote ID"] = carry.IDBatch;
+            row["Posicion"] = carry.Position;
+            row["Fecha Envio"] = carry.ShippmentDate;
             table.Rows.Add(row);
         }
 
@@ -76,8 +77,9 @@ namespace Aplicacion_Choferes.Forms
                 {
                     DataTable table = new DataTable();
                     table.Columns.Add("ID Camion", typeof(int));
-                    table.Columns.Add(LanguageManager.GetString("LotID"), typeof(int));
-                    table.Columns.Add(LanguageManager.GetString("ShipmentDate"), typeof(DateTime));
+                    table.Columns.Add("Lote ID", typeof(int));
+                    table.Columns.Add("Posicion", typeof(string));
+                    table.Columns.Add("Fecha Envio", typeof(DateTime));
 
                     fillDataTable(table, carrie);
 

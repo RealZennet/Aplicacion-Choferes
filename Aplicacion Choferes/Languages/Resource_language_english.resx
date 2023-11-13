@@ -318,4 +318,7 @@
   <data name="IDTrucker" xml:space="preserve">
     <value>ID Trucker</value>
   </data>
+  <data name="AssignedLotToTruck" xml:space="preserve">
+    <value>Assigned Lot To Truck</value>
+  </data>
 </root>

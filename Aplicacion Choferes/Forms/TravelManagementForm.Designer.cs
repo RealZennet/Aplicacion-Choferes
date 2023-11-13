@@ -79,9 +79,9 @@
             this.labelIDLotToAssign.AutoSize = true;
             this.labelIDLotToAssign.Location = new System.Drawing.Point(330, 133);
             this.labelIDLotToAssign.Name = "labelIDLotToAssign";
-            this.labelIDLotToAssign.Size = new System.Drawing.Size(101, 13);
+            this.labelIDLotToAssign.Size = new System.Drawing.Size(38, 13);
             this.labelIDLotToAssign.TabIndex = 52;
-            this.labelIDLotToAssign.Text = "ID del lote a asignar";
+            this.labelIDLotToAssign.Text = "ID lote";
             // 
             // txtBoxIDBatch
             // 

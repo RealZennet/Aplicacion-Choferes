@@ -51,9 +51,9 @@
             this.labelIDTrucker.AutoSize = true;
             this.labelIDTrucker.Location = new System.Drawing.Point(12, 278);
             this.labelIDTrucker.Name = "labelIDTrucker";
-            this.labelIDTrucker.Size = new System.Drawing.Size(71, 13);
+            this.labelIDTrucker.Size = new System.Drawing.Size(56, 13);
             this.labelIDTrucker.TabIndex = 68;
-            this.labelIDTrucker.Text = "ID Camionero";
+            this.labelIDTrucker.Text = "ID Camion";
             // 
             // txtBoxIDTrucker
             // 

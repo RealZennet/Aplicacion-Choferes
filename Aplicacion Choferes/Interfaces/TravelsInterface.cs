@@ -12,5 +12,6 @@ namespace Aplicacion_Choferes.APIRequests
         public int IDBatch { get; set; }
         public int IDDestination { get; set; }
         public string ShippingStatus { get; set; }
+        public string Position { get; set; }
     }
 }
