@@ -164,7 +164,7 @@
             // 
             // txtBoxTruckerID
             // 
-            this.txtBoxTruckerID.Location = new System.Drawing.Point(489, 309);
+            this.txtBoxTruckerID.Location = new System.Drawing.Point(412, 91);
             this.txtBoxTruckerID.Name = "txtBoxTruckerID";
             this.txtBoxTruckerID.Size = new System.Drawing.Size(49, 20);
             this.txtBoxTruckerID.TabIndex = 63;
@@ -172,7 +172,7 @@
             // labelIDTrucker
             // 
             this.labelIDTrucker.AutoSize = true;
-            this.labelIDTrucker.Location = new System.Drawing.Point(486, 293);
+            this.labelIDTrucker.Location = new System.Drawing.Point(409, 61);
             this.labelIDTrucker.Name = "labelIDTrucker";
             this.labelIDTrucker.Size = new System.Drawing.Size(52, 13);
             this.labelIDTrucker.TabIndex = 64;

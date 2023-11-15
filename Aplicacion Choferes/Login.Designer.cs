@@ -88,7 +88,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Aplicacion_Choferes.Properties.Resources.logoAzulZennet;
+            this.pictureBox1.Image = global::Aplicacion_Choferes.Properties.Resources.Zblanca__1_;
             this.pictureBox1.Location = new System.Drawing.Point(77, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(159, 100);
@@ -109,7 +109,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonLogin);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

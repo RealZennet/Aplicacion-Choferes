@@ -198,7 +198,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Zblanca %281%29.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ZENNETLOGO.png" />
   </ItemGroup>

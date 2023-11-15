@@ -73,6 +73,16 @@ namespace Aplicacion_Choferes.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Zblanca__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Zblanca (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ZENNETLOGO {
             get {
                 object obj = ResourceManager.GetObject("ZENNETLOGO", resourceCulture);
